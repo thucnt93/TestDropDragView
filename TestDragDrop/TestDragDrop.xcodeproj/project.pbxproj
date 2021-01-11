@@ -107,26 +107,15 @@
 				106B2585259469E100C4281B /* AppDelegate.h */,
 				106B2586259469E100C4281B /* AppDelegate.m */,
 				106B2588259469E300C4281B /* Assets.xcassets */,
+				106B2590259469E300C4281B /* TestDragDrop.entitlements */,
 				106B258A259469E300C4281B /* MainMenu.xib */,
 				106B258D259469E300C4281B /* Info.plist */,
 				106B258E259469E300C4281B /* main.m */,
-				106B2590259469E300C4281B /* TestDragDrop.entitlements */,
-				106B25A425946A2900C4281B /* DraggableView.h */,
-				106B25A525946A2900C4281B /* DraggableView.m */,
-				106B25A725946CB800C4281B /* DragHandler.h */,
-				106B25A825946CB800C4281B /* DragHandler.m */,
-				106E2A9625958A3C000CEE3B /* DropHandler.h */,
-				106E2A9725958A3C000CEE3B /* DropHandler.m */,
-				106E2A9925958B15000CEE3B /* DroppableView.h */,
-				106E2A9A25958B15000CEE3B /* DroppableView.m */,
-				106E2A9E25958E8A000CEE3B /* TestViewController.h */,
-				106E2A9F25958E8A000CEE3B /* TestViewController.m */,
-				106E2AA025958E8A000CEE3B /* TestViewController.xib */,
 				106E2AA425959F2B000CEE3B /* DragOperation.h */,
 				106E2AA525959F2B000CEE3B /* DragOperation.m */,
-				1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */,
-				1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */,
-				1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */,
+				1E92522B25AC62D000DDBDC8 /* DropHandler */,
+				1E92522A25AC62C200DDBDC8 /* DragHandler */,
+				1E92522C25AC631F00DDBDC8 /* TestView */,
 			);
 			path = TestDragDrop;
 			sourceTree = "<group>";
@@ -146,6 +135,41 @@
 				106E2A9425958737000CEE3B /* AppKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E92522A25AC62C200DDBDC8 /* DragHandler */ = {
+			isa = PBXGroup;
+			children = (
+				106B25A425946A2900C4281B /* DraggableView.h */,
+				106B25A525946A2900C4281B /* DraggableView.m */,
+				106B25A725946CB800C4281B /* DragHandler.h */,
+				106B25A825946CB800C4281B /* DragHandler.m */,
+			);
+			path = DragHandler;
+			sourceTree = "<group>";
+		};
+		1E92522B25AC62D000DDBDC8 /* DropHandler */ = {
+			isa = PBXGroup;
+			children = (
+				106E2A9625958A3C000CEE3B /* DropHandler.h */,
+				106E2A9725958A3C000CEE3B /* DropHandler.m */,
+				106E2A9925958B15000CEE3B /* DroppableView.h */,
+				106E2A9A25958B15000CEE3B /* DroppableView.m */,
+			);
+			path = DropHandler;
+			sourceTree = "<group>";
+		};
+		1E92522C25AC631F00DDBDC8 /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				106E2A9E25958E8A000CEE3B /* TestViewController.h */,
+				106E2A9F25958E8A000CEE3B /* TestViewController.m */,
+				106E2AA025958E8A000CEE3B /* TestViewController.xib */,
+				1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */,
+				1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */,
+				1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */,
+			);
+			path = TestView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

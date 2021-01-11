@@ -124,7 +124,7 @@
 {
     if (_dragHandler != nil && !self.disableDragTracking)
     {
-//        [_dragHandler handleDragMoveWithSource:self atPoint:screenPoint];
+        [_dragHandler handleDragMoveWithSource:self atPoint:screenPoint];
     }
 }
 

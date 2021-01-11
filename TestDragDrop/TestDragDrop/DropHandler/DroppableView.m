@@ -42,7 +42,7 @@
 {
     if (_dropHandler != nil)
     {
-//        return [_dropHandler handleDraggingUpdated:draggingInfo onTarget:self];
+        return [_dropHandler handleDraggingUpdated:draggingInfo onTarget:self];
     }
     
     return NSDragOperationNone;
@@ -52,7 +52,7 @@
 {
     if (_dropHandler != nil)
     {
-//        return [_dropHandler handleDraggingExited:draggingInfo onTarget:self];
+        return [_dropHandler handleDraggingExited:draggingInfo onTarget:self];
     }
 }
 
@@ -60,7 +60,7 @@
 {
     if (_dropHandler != nil)
     {
-//        return [_dropHandler handlePerformDraggingOperation:draggingInfo onTarget:self];
+        return [_dropHandler handlePerformDraggingOperation:draggingInfo onTarget:self];
     }
     
     return NO;
