@@ -6,6 +6,8 @@
 //  Copyright © 2019 Floware Inc. All rights reserved.
 //
 
+#import <AppKit/AppKit.h>
+#import <Foundation/Foundation.h>
 
 @class OutlineViewManager;
 @class DataProvider;

@@ -122,10 +122,10 @@
             return _provider.dataSource.count;
         }
         
-        if ([(id<ListSupplierProtocol>)item respondsToSelector:@selector(lsp_childs)])
-        {
-            return [(id<ListSupplierProtocol>)item lsp_childs].count;
-        }
+//        if ([(id<ListSupplierProtocol>)item respondsToSelector:@selector(lsp_childs)])
+//        {
+//            return [(id<ListSupplierProtocol>)item lsp_childs].count;
+//        }
     }
     @catch (NSException *exception)
     {
@@ -147,10 +147,10 @@
             return [_provider.dataSource objectAtIndex:index];
         }
         
-        if ([(id<ListSupplierProtocol>)item respondsToSelector:@selector(lsp_childs)])
-        {
-            return [[(id<ListSupplierProtocol>)item lsp_childs] objectAtIndex:index];
-        }
+//        if ([(id<ListSupplierProtocol>)item respondsToSelector:@selector(lsp_childs)])
+//        {
+//            return [[(id<ListSupplierProtocol>)item lsp_childs] objectAtIndex:index];
+//        }
     }
     @catch (NSException *exception)
     {
@@ -172,10 +172,10 @@
             return [self.protocols outlineViewManager:self isItemExpandable:(id<ListSupplierProtocol>)item];
         }
         
-        if ([(id<ListSupplierProtocol>)item respondsToSelector:@selector(lsp_childs)])
-        {
-            return [(id<ListSupplierProtocol>)item lsp_childs].count > 0;
-        }
+//        if ([(id<ListSupplierProtocol>)item respondsToSelector:@selector(lsp_childs)])
+//        {
+//            return [(id<ListSupplierProtocol>)item lsp_childs].count > 0;
+//        }
     }
     @catch (NSException *exception)
     {

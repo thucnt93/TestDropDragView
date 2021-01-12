@@ -1,5 +1,5 @@
 //
-//  DroppableView.h
+//  DroppableNSView.h
 //  TestDragDrop
 //
 //  Created by Trung Nguyen on 12/25/20.
@@ -12,7 +12,7 @@
 
 //NS_ASSUME_NONNULL_BEGIN
 
-@interface DroppableView : NSView
+@interface DroppableNSView : NSView
 
 @property (nonatomic, assign) id<DropTrackingDelegate> dropTrackingDelegate;
 

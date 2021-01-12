@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		106B2587259469E100C4281B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B2586259469E100C4281B /* AppDelegate.m */; };
 		106B2589259469E300C4281B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106B2588259469E300C4281B /* Assets.xcassets */; };
-		106B258C259469E300C4281B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106B258A259469E300C4281B /* MainMenu.xib */; };
 		106B258F259469E300C4281B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B258E259469E300C4281B /* main.m */; };
 		106B259A259469E400C4281B /* TestDragDropUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B2599259469E400C4281B /* TestDragDropUITests.m */; };
-		106B25A625946A2900C4281B /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B25A525946A2900C4281B /* DraggableView.m */; };
+		106B25A625946A2900C4281B /* DraggableNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B25A525946A2900C4281B /* DraggableNSView.m */; };
 		106B25A925946CB800C4281B /* DragHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B25A825946CB800C4281B /* DragHandler.m */; };
 		106E2A9825958A3C000CEE3B /* DropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9725958A3C000CEE3B /* DropHandler.m */; };
-		106E2A9B25958B15000CEE3B /* DroppableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9A25958B15000CEE3B /* DroppableView.m */; };
+		106E2A9B25958B15000CEE3B /* DroppableNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9A25958B15000CEE3B /* DroppableNSView.m */; };
 		106E2AA125958E8A000CEE3B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9F25958E8A000CEE3B /* TestViewController.m */; };
 		106E2AA225958E8A000CEE3B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AA025958E8A000CEE3B /* TestViewController.xib */; };
 		106E2AA625959F2B000CEE3B /* DragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AA525959F2B000CEE3B /* DragOperation.m */; };
-		1E92523925AC673B00DDBDC8 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E92523825AC673B00DDBDC8 /* BaseTableView.m */; };
-		1E92523E25AC675000DDBDC8 /* BaseOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E92523D25AC675000DDBDC8 /* BaseOutlineView.m */; };
-		1E92524325AC676800DDBDC8 /* BaseNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E92524225AC676800DDBDC8 /* BaseNSView.m */; };
+		1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5225AD8AC000586C3C /* DataProvider.m */; };
+		1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5B25AD8AC000586C3C /* CollectionViewManager.m */; };
+		1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */; };
+		1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A6125AD8AC000586C3C /* TableViewManager.m */; };
+		1E1D7A6A25ADA49300586C3C /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A6925ADA49300586C3C /* MockViewModel.m */; };
+		1E92523925AC673B00DDBDC8 /* DropableNSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */; };
 		1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */; };
 		1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */; };
+		1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E7A25AD596B00252456 /* OveralViewController.m */; };
+		1EA93E8F25AD758C00252456 /* DropableNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E8E25AD758C00252456 /* DropableNSButton.m */; };
+		1EA93EAB25AD7A7900252456 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93EAA25AD7A7900252456 /* Helper.m */; };
+		1EA93ECC25AD850000252456 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA93ECA25AD850000252456 /* MainMenu.xib */; };
+		1EA93ED225AD857B00252456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA93ED125AD857B00252456 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,36 +48,52 @@
 		106B2585259469E100C4281B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		106B2586259469E100C4281B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		106B2588259469E300C4281B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		106B258B259469E300C4281B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		106B258D259469E300C4281B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		106B258E259469E300C4281B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		106B2590259469E300C4281B /* TestDragDrop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestDragDrop.entitlements; sourceTree = "<group>"; };
 		106B2595259469E400C4281B /* TestDragDropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDragDropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		106B2599259469E400C4281B /* TestDragDropUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDragDropUITests.m; sourceTree = "<group>"; };
 		106B259B259469E400C4281B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		106B25A425946A2900C4281B /* DraggableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
-		106B25A525946A2900C4281B /* DraggableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DraggableView.m; sourceTree = "<group>"; };
+		106B25A425946A2900C4281B /* DraggableNSView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DraggableNSView.h; sourceTree = "<group>"; };
+		106B25A525946A2900C4281B /* DraggableNSView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DraggableNSView.m; sourceTree = "<group>"; };
 		106B25A725946CB800C4281B /* DragHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragHandler.h; sourceTree = "<group>"; };
 		106B25A825946CB800C4281B /* DragHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragHandler.m; sourceTree = "<group>"; };
 		106E2A9425958737000CEE3B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		106E2A9625958A3C000CEE3B /* DropHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropHandler.h; sourceTree = "<group>"; };
 		106E2A9725958A3C000CEE3B /* DropHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropHandler.m; sourceTree = "<group>"; };
-		106E2A9925958B15000CEE3B /* DroppableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DroppableView.h; sourceTree = "<group>"; };
-		106E2A9A25958B15000CEE3B /* DroppableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DroppableView.m; sourceTree = "<group>"; };
+		106E2A9925958B15000CEE3B /* DroppableNSView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DroppableNSView.h; sourceTree = "<group>"; };
+		106E2A9A25958B15000CEE3B /* DroppableNSView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DroppableNSView.m; sourceTree = "<group>"; };
 		106E2A9E25958E8A000CEE3B /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		106E2A9F25958E8A000CEE3B /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		106E2AA025958E8A000CEE3B /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		106E2AA425959F2B000CEE3B /* DragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragOperation.h; sourceTree = "<group>"; };
 		106E2AA525959F2B000CEE3B /* DragOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragOperation.m; sourceTree = "<group>"; };
-		1E92523725AC673B00DDBDC8 /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
-		1E92523825AC673B00DDBDC8 /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
-		1E92523C25AC675000DDBDC8 /* BaseOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseOutlineView.h; sourceTree = "<group>"; };
-		1E92523D25AC675000DDBDC8 /* BaseOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseOutlineView.m; sourceTree = "<group>"; };
-		1E92524125AC676800DDBDC8 /* BaseNSView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNSView.h; sourceTree = "<group>"; };
-		1E92524225AC676800DDBDC8 /* BaseNSView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNSView.m; sourceTree = "<group>"; };
+		1E1D7A5225AD8AC000586C3C /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
+		1E1D7A5325AD8AC000586C3C /* DataProviderProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProviderProtocols.h; sourceTree = "<group>"; };
+		1E1D7A5425AD8AC000586C3C /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		1E1D7A5625AD8AC000586C3C /* ListSupplierProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSupplierProtocol.h; sourceTree = "<group>"; };
+		1E1D7A5825AD8AC000586C3C /* ItemCellViewProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCellViewProtocols.h; sourceTree = "<group>"; };
+		1E1D7A5A25AD8AC000586C3C /* CollectionViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewManager.h; sourceTree = "<group>"; };
+		1E1D7A5B25AD8AC000586C3C /* CollectionViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewManager.m; sourceTree = "<group>"; };
+		1E1D7A5D25AD8AC000586C3C /* OutlineViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewManager.h; sourceTree = "<group>"; };
+		1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewManager.m; sourceTree = "<group>"; };
+		1E1D7A6025AD8AC000586C3C /* TableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewManager.h; sourceTree = "<group>"; };
+		1E1D7A6125AD8AC000586C3C /* TableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewManager.m; sourceTree = "<group>"; };
+		1E1D7A6825ADA49300586C3C /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
+		1E1D7A6925ADA49300586C3C /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
+		1E92523725AC673B00DDBDC8 /* DropableNSTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropableNSTableView.h; sourceTree = "<group>"; };
+		1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropableNSTableView.m; sourceTree = "<group>"; };
 		1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutsideViewContronller.h; sourceTree = "<group>"; };
 		1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutsideViewContronller.m; sourceTree = "<group>"; };
 		1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutsideViewContronller.xib; sourceTree = "<group>"; };
+		1EA93E7925AD596B00252456 /* OveralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OveralViewController.h; sourceTree = "<group>"; };
+		1EA93E7A25AD596B00252456 /* OveralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OveralViewController.m; sourceTree = "<group>"; };
+		1EA93E8D25AD758C00252456 /* DropableNSButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropableNSButton.h; sourceTree = "<group>"; };
+		1EA93E8E25AD758C00252456 /* DropableNSButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropableNSButton.m; sourceTree = "<group>"; };
+		1EA93EA925AD7A7900252456 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		1EA93EAA25AD7A7900252456 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		1EA93ECB25AD850000252456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1EA93ED125AD857B00252456 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,19 +136,21 @@
 		106B2584259469E100C4281B /* TestDragDrop */ = {
 			isa = PBXGroup;
 			children = (
-				1E92522F25AC66B000DDBDC8 /* BaseView */,
+				1E1D7A5025AD8AC000586C3C /* DatasourcesManager */,
+				1EA93E9C25AD76D900252456 /* DragableBaseView */,
+				1E92522F25AC66B000DDBDC8 /* DropableBaseView */,
 				1E92522B25AC62D000DDBDC8 /* DropHandler */,
 				1E92522A25AC62C200DDBDC8 /* DragHandler */,
-				1E92522C25AC631F00DDBDC8 /* TestView */,
+				1EA93EA125AD775500252456 /* DemoView */,
+				1EA93EA625AD7A3100252456 /* Helper */,
 				106B2585259469E100C4281B /* AppDelegate.h */,
 				106B2586259469E100C4281B /* AppDelegate.m */,
 				106B2588259469E300C4281B /* Assets.xcassets */,
 				106B2590259469E300C4281B /* TestDragDrop.entitlements */,
-				106B258A259469E300C4281B /* MainMenu.xib */,
+				1EA93ED125AD857B00252456 /* Main.storyboard */,
 				106B258D259469E300C4281B /* Info.plist */,
 				106B258E259469E300C4281B /* main.m */,
-				106E2AA425959F2B000CEE3B /* DragOperation.h */,
-				106E2AA525959F2B000CEE3B /* DragOperation.m */,
+				1E92522C25AC631F00DDBDC8 /* TestView */,
 			);
 			path = TestDragDrop;
 			sourceTree = "<group>";
@@ -147,11 +172,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1E1D7A5025AD8AC000586C3C /* DatasourcesManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A5125AD8AC000586C3C /* Provider */,
+				1E1D7A5525AD8AC000586C3C /* Supplier */,
+				1E1D7A5725AD8AC000586C3C /* UIManager */,
+			);
+			path = DatasourcesManager;
+			sourceTree = "<group>";
+		};
+		1E1D7A5125AD8AC000586C3C /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A5225AD8AC000586C3C /* DataProvider.m */,
+				1E1D7A5325AD8AC000586C3C /* DataProviderProtocols.h */,
+				1E1D7A5425AD8AC000586C3C /* DataProvider.h */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		1E1D7A5525AD8AC000586C3C /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A5625AD8AC000586C3C /* ListSupplierProtocol.h */,
+			);
+			path = Supplier;
+			sourceTree = "<group>";
+		};
+		1E1D7A5725AD8AC000586C3C /* UIManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A5825AD8AC000586C3C /* ItemCellViewProtocols.h */,
+				1E1D7A5925AD8AC000586C3C /* CollectionViewManager */,
+				1E1D7A5C25AD8AC000586C3C /* OutlineViewManager */,
+				1E1D7A5F25AD8AC000586C3C /* TableViewManager */,
+			);
+			path = UIManager;
+			sourceTree = "<group>";
+		};
+		1E1D7A5925AD8AC000586C3C /* CollectionViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A5A25AD8AC000586C3C /* CollectionViewManager.h */,
+				1E1D7A5B25AD8AC000586C3C /* CollectionViewManager.m */,
+			);
+			path = CollectionViewManager;
+			sourceTree = "<group>";
+		};
+		1E1D7A5C25AD8AC000586C3C /* OutlineViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A5D25AD8AC000586C3C /* OutlineViewManager.h */,
+				1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */,
+			);
+			path = OutlineViewManager;
+			sourceTree = "<group>";
+		};
+		1E1D7A5F25AD8AC000586C3C /* TableViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A6025AD8AC000586C3C /* TableViewManager.h */,
+				1E1D7A6125AD8AC000586C3C /* TableViewManager.m */,
+			);
+			path = TableViewManager;
+			sourceTree = "<group>";
+		};
 		1E92522A25AC62C200DDBDC8 /* DragHandler */ = {
 			isa = PBXGroup;
 			children = (
-				106B25A425946A2900C4281B /* DraggableView.h */,
-				106B25A525946A2900C4281B /* DraggableView.m */,
 				106B25A725946CB800C4281B /* DragHandler.h */,
 				106B25A825946CB800C4281B /* DragHandler.m */,
 			);
@@ -163,8 +252,6 @@
 			children = (
 				106E2A9625958A3C000CEE3B /* DropHandler.h */,
 				106E2A9725958A3C000CEE3B /* DropHandler.m */,
-				106E2A9925958B15000CEE3B /* DroppableView.h */,
-				106E2A9A25958B15000CEE3B /* DroppableView.m */,
 			);
 			path = DropHandler;
 			sourceTree = "<group>";
@@ -172,6 +259,7 @@
 		1E92522C25AC631F00DDBDC8 /* TestView */ = {
 			isa = PBXGroup;
 			children = (
+				1EA93ECA25AD850000252456 /* MainMenu.xib */,
 				106E2A9E25958E8A000CEE3B /* TestViewController.h */,
 				106E2A9F25958E8A000CEE3B /* TestViewController.m */,
 				106E2AA025958E8A000CEE3B /* TestViewController.xib */,
@@ -182,17 +270,48 @@
 			path = TestView;
 			sourceTree = "<group>";
 		};
-		1E92522F25AC66B000DDBDC8 /* BaseView */ = {
+		1E92522F25AC66B000DDBDC8 /* DropableBaseView */ = {
 			isa = PBXGroup;
 			children = (
-				1E92523725AC673B00DDBDC8 /* BaseTableView.h */,
-				1E92523825AC673B00DDBDC8 /* BaseTableView.m */,
-				1E92523C25AC675000DDBDC8 /* BaseOutlineView.h */,
-				1E92523D25AC675000DDBDC8 /* BaseOutlineView.m */,
-				1E92524125AC676800DDBDC8 /* BaseNSView.h */,
-				1E92524225AC676800DDBDC8 /* BaseNSView.m */,
+				106E2A9925958B15000CEE3B /* DroppableNSView.h */,
+				106E2A9A25958B15000CEE3B /* DroppableNSView.m */,
+				1EA93E8D25AD758C00252456 /* DropableNSButton.h */,
+				1EA93E8E25AD758C00252456 /* DropableNSButton.m */,
+				1E92523725AC673B00DDBDC8 /* DropableNSTableView.h */,
+				1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */,
 			);
-			path = BaseView;
+			path = DropableBaseView;
+			sourceTree = "<group>";
+		};
+		1EA93E9C25AD76D900252456 /* DragableBaseView */ = {
+			isa = PBXGroup;
+			children = (
+				106B25A425946A2900C4281B /* DraggableNSView.h */,
+				106B25A525946A2900C4281B /* DraggableNSView.m */,
+			);
+			path = DragableBaseView;
+			sourceTree = "<group>";
+		};
+		1EA93EA125AD775500252456 /* DemoView */ = {
+			isa = PBXGroup;
+			children = (
+				1EA93E7925AD596B00252456 /* OveralViewController.h */,
+				1EA93E7A25AD596B00252456 /* OveralViewController.m */,
+				1E1D7A6825ADA49300586C3C /* MockViewModel.h */,
+				1E1D7A6925ADA49300586C3C /* MockViewModel.m */,
+			);
+			path = DemoView;
+			sourceTree = "<group>";
+		};
+		1EA93EA625AD7A3100252456 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				106E2AA425959F2B000CEE3B /* DragOperation.h */,
+				106E2AA525959F2B000CEE3B /* DragOperation.m */,
+				1EA93EA925AD7A7900252456 /* Helper.h */,
+				1EA93EAA25AD7A7900252456 /* Helper.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +394,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA93ED225AD857B00252456 /* Main.storyboard in Resources */,
 				106B2589259469E300C4281B /* Assets.xcassets in Resources */,
 				1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */,
 				106E2AA225958E8A000CEE3B /* TestViewController.xib in Resources */,
-				106B258C259469E300C4281B /* MainMenu.xib in Resources */,
+				1EA93ECC25AD850000252456 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,18 +416,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */,
 				106B25A925946CB800C4281B /* DragHandler.m in Sources */,
 				1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */,
 				106E2AA625959F2B000CEE3B /* DragOperation.m in Sources */,
-				106B25A625946A2900C4281B /* DraggableView.m in Sources */,
+				1E1D7A6A25ADA49300586C3C /* MockViewModel.m in Sources */,
+				106B25A625946A2900C4281B /* DraggableNSView.m in Sources */,
+				1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */,
 				106E2AA125958E8A000CEE3B /* TestViewController.m in Sources */,
-				106E2A9B25958B15000CEE3B /* DroppableView.m in Sources */,
-				1E92524325AC676800DDBDC8 /* BaseNSView.m in Sources */,
-				1E92523E25AC675000DDBDC8 /* BaseOutlineView.m in Sources */,
+				106E2A9B25958B15000CEE3B /* DroppableNSView.m in Sources */,
+				1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */,
 				106E2A9825958A3C000CEE3B /* DropHandler.m in Sources */,
 				106B258F259469E300C4281B /* main.m in Sources */,
-				1E92523925AC673B00DDBDC8 /* BaseTableView.m in Sources */,
+				1E92523925AC673B00DDBDC8 /* DropableNSTableView.m in Sources */,
+				1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */,
+				1EA93E8F25AD758C00252456 /* DropableNSButton.m in Sources */,
+				1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */,
 				106B2587259469E100C4281B /* AppDelegate.m in Sources */,
+				1EA93EAB25AD7A7900252456 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +456,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		106B258A259469E300C4281B /* MainMenu.xib */ = {
+		1EA93ECA25AD850000252456 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				106B258B259469E300C4281B /* Base */,
+				1EA93ECB25AD850000252456 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

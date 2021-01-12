@@ -1,21 +1,21 @@
 //
-//  DroppableView.m
+//  DroppableNSView.m
 //  TestDragDrop
 //
 //  Created by Trung Nguyen on 12/25/20.
 //  Copyright © 2020 Trung Nguyen. All rights reserved.
 //
 
-#import "DroppableView.h"
+#import "DroppableNSView.h"
 
-@interface DroppableView ()<NSDraggingDestination>
+@interface DroppableNSView ()<NSDraggingDestination>
 {
     DropHandler *_dropHandler;
 }
 
 @end
 
-@implementation DroppableView
+@implementation DroppableNSView
 
 - (void)awakeFromNib
 {

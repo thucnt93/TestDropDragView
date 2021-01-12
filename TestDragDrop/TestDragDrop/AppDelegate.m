@@ -10,42 +10,30 @@
 
 #import "DragOperation.h"
 
-#import "DraggableView.h"
+#import "DraggableNSView.h"
 
 #import "TestViewController.h"
 
 #import "OutsideViewContronller.h"
 
-@interface AppDelegate ()
-{
-    TestViewController *_testCtrler;
-    OutsideViewContronller *outsideViewController;
-}
-
-@property (weak) IBOutlet NSWindow *window;
-
-@property (weak) IBOutlet NSView *testView;
-
-@property (weak) IBOutlet DraggableView *dragView;
-
-@property (weak) IBOutlet NSView *outsideView;
-
-@property (weak) IBOutlet DraggableView *imageSource;
-
-
+@interface AppDelegate () {}
 @end
+
 
 @implementation AppDelegate
 
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+    
+}
+
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
     
-    _testCtrler = [TestViewController new];
     
-    [self addAutoResizingView:_testCtrler.view toView:_testView];
-    
-    self.dragView.dragTrackingDelegate = self;
-    self.imageSource.dragTrackingDelegate = self;
     
 }
 
@@ -54,37 +42,35 @@
     // Insert code here to tear down your application
 }
 
-- (void)addAutoResizingView:(NSView *)containerView toView:(NSView *)toView
-{
-    if (containerView != nil)
-    {
-        [toView addSubview:containerView];
-        
-        [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
-        [toView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[containerView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(containerView)]];
-        [toView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[containerView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(containerView)]];
-        
-        // Should force update view constraints for update UI correctly.
-        // [FM-1270] Show flashing for Flo app when open with Compact mode.
-        [toView layoutSubtreeIfNeeded];
-        [toView.superview layoutSubtreeIfNeeded];
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////
 
 #pragma mark - DragTrackingDelegate
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint
 {
-    NSPoint locationInWindow = [_testCtrler.view.window convertPointFromScreen:atPoint];
-    
-    NSPoint point = [_testCtrler.view convertPoint:locationInWindow fromView:nil];
-    
-    if (NSPointInRect(point, _testCtrler.view.bounds))
-    {
-        return CustomDragOperation_MOVE;
-    }
-    
+//    NSPoint locationInWindow = [_testCtrler.view.window convertPointFromScreen:atPoint];
+//
+//    NSPoint point = [_testCtrler.view convertPoint:locationInWindow fromView:nil];
+//
+//    if (NSPointInRect(point, _testCtrler.view.bounds))
+//    {
+//        return CustomDragOperation_MOVE;
+//    }
+//
     return CustomDragOperation_STOP;
 }
 
@@ -96,26 +82,26 @@
     /// cursor combine with drop update
     ///
     
-    NSPoint locationInWindow = [_testCtrler.view.window convertPointFromScreen:atPoint];
-    
-    NSPoint point = [_testCtrler.view convertPoint:locationInWindow fromView:nil];
-    
-    if (NSPointInRect(point, _testCtrler.view.bounds))
-    {
-        return CustomDragOperation_MOVE;
-    }
-    
-    if (locationInWindow.x <= 40)
-    {
-        return CustomDragOperation_LEFT;
-    }
-    
-    float maxWidth = _testCtrler.view.window.frame.size.width - 40;
-    
-    if (locationInWindow.x >= maxWidth)
-    {
-        return CustomDragOperation_RIGHT;
-    }
+//    NSPoint locationInWindow = [_testCtrler.view.window convertPointFromScreen:atPoint];
+//
+//    NSPoint point = [_testCtrler.view convertPoint:locationInWindow fromView:nil];
+//
+//    if (NSPointInRect(point, _testCtrler.view.bounds))
+//    {
+//        return CustomDragOperation_MOVE;
+//    }
+//
+//    if (locationInWindow.x <= 40)
+//    {
+//        return CustomDragOperation_LEFT;
+//    }
+//
+//    float maxWidth = _testCtrler.view.window.frame.size.width - 40;
+//
+//    if (locationInWindow.x >= maxWidth)
+//    {
+//        return CustomDragOperation_RIGHT;
+//    }
     
     return CustomDragOperation_STOP;
 }
@@ -134,10 +120,10 @@
     // Then we have last window point,
     // Then check what is view contain that point, then present
     
-    if (outsideViewController == nil) {
-        outsideViewController = [[OutsideViewContronller alloc] init];
-        [self addAutoResizingView:outsideViewController.view toView:self.outsideView];
-    }
+//    if (outsideViewController == nil) {
+//        outsideViewController = [[OutsideViewContronller alloc] init];
+//        [self addAutoResizingView:outsideViewController.view toView:self.outsideView];
+//    }
     
     [DragOperation changeCursorByOperation:CustomDragOperation_NONE];
     

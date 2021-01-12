@@ -8,13 +8,13 @@
 
 #import "TestViewController.h"
 
-#import "DroppableView.h"
+#import "DroppableNSView.h"
 #import "DropHandler.h"
 
 @interface TestViewController ()<DropTrackingDelegate>
 
-@property (weak) IBOutlet DroppableView *dropView;
-@property (weak) IBOutlet DroppableView *customDropView;
+@property (weak) IBOutlet DroppableNSView *dropView;
+@property (weak) IBOutlet DroppableNSView *customDropView;
 
 @end
 

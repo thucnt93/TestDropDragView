@@ -1,5 +1,5 @@
 //
-//  BaseOutlineView.h
+//  DropableNSTableView.h
 //  TestDragDrop
 //
 //  Created by Thuc Nguyen on 11/01/2021.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseOutlineView : NSOutlineView
+@interface DropableNSTableView : NSTableView<NSTableViewDelegate, NSTableViewDataSource>
 
 @end
 

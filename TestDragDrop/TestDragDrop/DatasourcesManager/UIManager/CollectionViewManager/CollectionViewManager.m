@@ -118,10 +118,10 @@
             return _provider.dataSource.count;
         }
         
-        if ([[_provider.dataSource objectAtIndex:section] respondsToSelector:@selector(lsp_childs)])
-        {
-            return [[_provider.dataSource objectAtIndex:section] lsp_childs].count;
-        }
+//        if ([[_provider.dataSource objectAtIndex:section] respondsToSelector:@selector(lsp_childs)])
+//        {
+//            return [[_provider.dataSource objectAtIndex:section] lsp_childs].count;
+//        }
     }
     @catch (NSException *exception)
     {

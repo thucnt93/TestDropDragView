@@ -1,5 +1,5 @@
 //
-//  DraggableView.h
+//  DraggableNSView.h
 //  TestDragDrop
 //
 //  Created by Trung Nguyen on 12/24/20.
@@ -12,7 +12,7 @@
 
 //NS_ASSUME_NONNULL_BEGIN
 
-@interface DraggableView : NSView
+@interface DraggableNSView : NSView
 
 @property (nonatomic, assign) id<DragTrackingDelegate> dragTrackingDelegate;
 

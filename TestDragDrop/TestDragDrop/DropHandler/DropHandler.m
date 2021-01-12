@@ -8,7 +8,7 @@
 
 #import "DropHandler.h"
 
-#import "DraggableView.h"
+#import "DraggableNSView.h"
 
 @interface DropHandler ()
 {
@@ -45,7 +45,7 @@
 
 - (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
 {
-    [self handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.draggingSource]; //enable disableDragTracking on DraggableView
+    [self handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.draggingSource]; //enable disableDragTracking on DraggableNSView
 }
 
 - (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
@@ -63,9 +63,9 @@
 
 - (NSDragOperation)handleCustomDragOperation:(CustomDragOperation)operation draggingSource:(id)draggingSource
 {
-    if ([draggingSource isKindOfClass:[DraggableView class]])
+    if ([draggingSource isKindOfClass:[DraggableNSView class]])
     {
-        ((DraggableView *)draggingSource).disableDragTracking = (operation != CustomDragOperation_NONE);
+        ((DraggableNSView *)draggingSource).disableDragTracking = (operation != CustomDragOperation_NONE);
     }
     
     NSUInteger allSystemOperations = NSDragOperationCopy

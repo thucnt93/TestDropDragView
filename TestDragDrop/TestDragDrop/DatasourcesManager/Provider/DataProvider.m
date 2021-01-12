@@ -85,15 +85,15 @@
         {
             for (id<ListSupplierProtocol> item in array)
             {
-                if ([item respondsToSelector:@selector(lsp_childs)] && ([item lsp_childs].count > 0))
-                {
-                    if ([self removeObject:object fromArray:[item lsp_childs]])
-                    {
-                        successful = YES;
-                        
-                        return successful;
-                    }
-                }
+//                if ([item respondsToSelector:@selector(lsp_childs)] && ([item lsp_childs].count > 0))
+//                {
+//                    if ([self removeObject:object fromArray:[item lsp_childs]])
+//                    {
+//                        successful = YES;
+//
+//                        return successful;
+//                    }
+//                }
             }
         }
     }
@@ -141,10 +141,10 @@
     
     for (id<ListSupplierProtocol> object in _dataSource)
     {
-        if ([(id<ListSupplierProtocol>)object respondsToSelector:@selector(lsp_childs)] && ([(id<ListSupplierProtocol>)object lsp_childs].count > 0))
-        {
-            break;
-        }
+//        if ([(id<ListSupplierProtocol>)object respondsToSelector:@selector(lsp_childs)] && ([(id<ListSupplierProtocol>)object lsp_childs].count > 0))
+//        {
+//            break;
+//        }
         
         if (object == [_dataSource lastObject])
         {
@@ -201,15 +201,15 @@
         
         if ([self isKindOfTreeDataSource])
         {
-            if ([[_dataSource objectAtIndex:indexPath.section] respondsToSelector:@selector(lsp_childs)])
-            {
-                NSArray *childs = [[_dataSource objectAtIndex:indexPath.section] lsp_childs];
-                
-                if (indexPath.item >= 0 && indexPath.item < childs.count)
-                {
-                    item = [childs objectAtIndex:indexPath.item];
-                }
-            }
+//            if ([[_dataSource objectAtIndex:indexPath.section] respondsToSelector:@selector(lsp_childs)])
+//            {
+//                NSArray *childs = [[_dataSource objectAtIndex:indexPath.section] lsp_childs];
+//                
+//                if (indexPath.item >= 0 && indexPath.item < childs.count)
+//                {
+//                    item = [childs objectAtIndex:indexPath.item];
+//                }
+//            }
         }
         else
         {

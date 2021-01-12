@@ -1,21 +1,21 @@
 //
-//  DraggableView.m
+//  DraggableNSView.m
 //  TestDragDrop
 //
 //  Created by Trung Nguyen on 12/24/20.
 //  Copyright © 2020 Trung Nguyen. All rights reserved.
 //
 
-#import "DraggableView.h"
+#import "DraggableNSView.h"
 
-@interface DraggableView ()<NSPasteboardItemDataProvider>
+@interface DraggableNSView ()<NSPasteboardItemDataProvider>
 {
     DragHandler *_dragHandler;
 }
 
 @end
 
-@implementation DraggableView
+@implementation DraggableNSView
 
 - (void) awakeFromNib
 {

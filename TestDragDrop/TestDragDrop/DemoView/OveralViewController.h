@@ -1,8 +1,8 @@
 //
-//  BaseTableView.h
+//  OveralViewController.h
 //  TestDragDrop
 //
-//  Created by Thuc Nguyen on 11/01/2021.
+//  Created by Thuc Nguyen on 12/01/2021.
 //  Copyright © 2021 Trung Nguyen. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseTableView : NSTableView
+@interface OveralViewController : NSViewController
 
 @end
 
