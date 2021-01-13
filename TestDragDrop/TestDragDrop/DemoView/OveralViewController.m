@@ -33,19 +33,23 @@
 - (void)setUpView {
     self.nsView.wantsLayer = YES;
     self.nsView.layer.backgroundColor = [[NSColor brownColor] CGColor];
-    
-    _mockViewModel = [[MockViewModel alloc] init];
+    NSArray *initArray = @[@"TEST", @"TEST3",@"TEST3",@"TEST3",@"TEST3",@"TEST3",@"TEST3"];
+    NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
+    _mockViewModel = [[MockViewModel alloc] initWithModel:models];
+    [_mockViewModel setupProvider];
+    [_mockViewModel buildDataSource];
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider];
+    
 }
 
 - (NSTableRowView *)tableViewManager:(TableViewManager *)manager rowViewForRow:(NSInteger)row byItem:(id)item {
-    
-    return  nil;
+    NSTableRowView *view = [[NSTableRowView alloc] initWithFrame:NSMakeRect(0, 0, 200, 40)];
+    return  view;
 }
 
 - (NSUserInterfaceItemIdentifier)tableViewManager:(TableViewManager *)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id)item {
     
-    return @"";
+    return @"Emoty string";
 }
 
 @end

@@ -275,7 +275,7 @@
         NSLog(@"%s-[%d] exception - reason = %@, [NSThread callStackSymbols] = %@", __PRETTY_FUNCTION__, __LINE__, exception.reason, [NSThread callStackSymbols]);
     }
     
-    return 0.0;
+    return 90;
 }
 
 /**

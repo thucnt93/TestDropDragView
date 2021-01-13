@@ -11,11 +11,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MockViewModel : NSObject
+@interface MockViewModel : NSObject<DataProviderProtocols>
 
 @property (nonatomic) DataProvider * _Nonnull provider;
 
-@property (nonatomic) NSMutableArray * _Nullable modelsList;
+@property (nonatomic) NSMutableArray * _Nullable modelsListAfterBuildDataSource;
+
+@property (nonatomic) NSMutableArray * _Nullable models;
+
+- (void)buildDataSource;
+- (instancetype)initWithModel:(id)models;
+
+
+
+- (void)setupProvider;
 
 @end
 
