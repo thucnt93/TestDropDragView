@@ -20,6 +20,8 @@
     
     NSMutableArray<NSUserInterfaceItemIdentifier> *_registeredIdentifiers;
     NSCache *_cachedRowHeights;
+    DragHandler *_dragHandler;
+    DropHandler *_dropHandler;
 }
 
 /// @property
@@ -31,7 +33,12 @@
 
 #pragma mark - Initialize
 
-- (instancetype)initWithTableView:(NSTableView * _Nonnull)tableView source:(id<TableViewManagerProtocols>)source provider:(DataProvider * _Nonnull)provider
+
+- (instancetype)initWithTableView:(NSTableView * _Nonnull)tableView
+                           source:(id<TableViewManagerProtocols>)source
+                         provider:(DataProvider * _Nonnull)provider
+            dragTrackingDelegates:(id<DragTrackingDelegate>)dragTrackingDelegate
+            dropTrackingDelegates:(id<DropTrackingDelegate>)dropTrackingDelegate
 {
     if (self = [super init])
     {
@@ -49,6 +56,10 @@
             [_tableView setTarget:self];
             [_tableView setAction:@selector(tableViewDidSelectItem)];
             [_tableView setDoubleAction:@selector(tableViewDidDoubleSelectItem)];
+            _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:dragTrackingDelegate];
+            _dropHandler = [[DropHandler alloc] initWithDropTrackingDelegate:dropTrackingDelegate];
+            
+            [_tableView registerForDraggedTypes: [NSArray arrayWithObjects: (id)kUTTypeData, NSFilenamesPboardType, nil]];
         }
         else
         {
@@ -275,7 +286,7 @@
         NSLog(@"%s-[%d] exception - reason = %@, [NSThread callStackSymbols] = %@", __PRETTY_FUNCTION__, __LINE__, exception.reason, [NSThread callStackSymbols]);
     }
     
-    return 90;
+    return 50;
 }
 
 /**
@@ -461,7 +472,8 @@
 {
     if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:didDragTableColumn:)])
     {
-        [self.protocols tableViewManager:self didDragTableColumn:tableColumn];
+//        [self.protocols tableViewManager:self didDragTableColumn:tableColumn];
+        [_dragHandler handlerDidDragTableColumnWithTableManager:self didDragTableColumn:tableColumn];
     }
 }
 
@@ -496,7 +508,8 @@
         {
             NSArray<id<ListSupplierProtocol>> *items = [_provider objectsForRowIndexes:rowIndexes];
             
-            [self.protocols tableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
+//            [self.protocols tableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
+            [_dragHandler handleDragBeginWithTableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
         }
     }
     @catch (NSException *exception)
@@ -512,7 +525,8 @@
 {
     if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:draggingSession:endedAtPoint:operation:)])
     {
-        [self.protocols tableViewManager:self draggingSession:session endedAtPoint:screenPoint operation:operation];
+//        [self.protocols tableViewManager:self draggingSession:session endedAtPoint:screenPoint operation:operation];
+        [_dragHandler handleDragEndedWithTableViewManager:self draggingSession:session endedAtPoint:screenPoint operation:operation];
     }
 }
 
@@ -523,7 +537,8 @@
 {
     if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:updateDraggingItemsForDrag:)])
     {
-        [self.protocols tableViewManager:self updateDraggingItemsForDrag:draggingInfo];
+//        [self.protocols tableViewManager:self updateDraggingItemsForDrag:draggingInfo];
+        [_dragHandler handleUpdateDraggingWithTableViewManager:self updateDraggingItemsForDrag:draggingInfo];
     }
 }
 
@@ -538,7 +553,8 @@
         {
             NSArray<id<ListSupplierProtocol>> *items = [_provider objectsForRowIndexes:rowIndexes];
             
-            return [self.protocols tableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
+//            return [self.protocols tableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
+            return [_dragHandler handleWriteToPasteboardWithTableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
         }
     }
     @catch (NSException *exception)
@@ -558,7 +574,8 @@
     {
         if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
         {
-            return [self.protocols tableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
+//            return [self.protocols tableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
+            return [_dropHandler handleValidateDropWithTableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
         }
     }
     @catch (NSException *exception)
@@ -578,7 +595,8 @@
     {
         if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:acceptDrop:item:row:dropOperation:)])
         {
-            return [self.protocols tableViewManager:self acceptDrop:info item:[_provider objectForRow:row] row:row dropOperation:dropOperation];
+//            return [self.protocols tableViewManager:self acceptDrop:info item:[_provider objectForRow:row] row:row dropOperation:dropOperation];
+            return [_dropHandler handleAcceptDropWithTableViewManager:self acceptDrop:info item:[_provider objectForRow:row] row:row dropOperation:dropOperation];
         }
     }
     @catch (NSException *exception)

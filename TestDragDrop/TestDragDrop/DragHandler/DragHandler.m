@@ -58,4 +58,55 @@
     [DragOperation changeCursorByOperation:NSNotFound];
 }
 
+- (void)handlerDidDragTableColumnWithTableManager:(TableViewManager *)manager didDragTableColumn:(NSTableColumn *)tableColumn {
+    
+    NSLog(@"handle did drag table column");
+}
+
+- (void)handleDragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes items:(NSArray *)items {
+    
+    NSLog(@"handle begin dragging session");
+    
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(dragBeginWithTableViewManager:draggingSession:)])
+    {
+         [_trackingDelegate dragBeginWithTableViewManager:manager draggingSession:session];
+    }
+}
+
+- (void)handleUpdateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
+    
+    NSLog(@"handle update draging session");
+    
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(updateDraggingWithTableViewManager:updateDraggingItemsForDrag:)])
+    {
+        [_trackingDelegate updateDraggingWithTableViewManager:manager updateDraggingItemsForDrag:draggingInfo];
+    }
+}
+
+- (void)handleDragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+    
+    NSLog(@"handle ended draggingSession");
+    
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(dragEndedWithTableViewManager:draggingSession:endedAtPoint:operation:)])
+    {
+        [_trackingDelegate dragEndedWithTableViewManager:manager draggingSession:session endedAtPoint:screenPoint operation:operation];
+    }
+}
+
+
+- (BOOL)handleWriteToPasteboardWithTableViewManager:(TableViewManager *)manager writeRowsWithIndexes:(NSIndexSet *)rowIndexes items:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard {
+    
+    NSLog(@"handle writeRowsWithIndexes");
+    
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(writeToPasteboardWithTableViewManager:writeRowsWithIndexes:items:toPasteboard:)])
+    {
+        [_trackingDelegate writeToPasteboardWithTableViewManager:manager writeRowsWithIndexes:rowIndexes items:items toPasteboard:pasteboard];
+    }
+    
+    return YES;
+}
+
+
+
+
 @end

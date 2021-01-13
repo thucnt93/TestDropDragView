@@ -8,7 +8,7 @@
 
 //#import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
-
+#import "TableViewManager.h"
 #import "DragOperation.h"
 
 //NS_ASSUME_NONNULL_BEGIN
@@ -26,9 +26,23 @@
 
 - (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)delegate;
 
+// NSViewDropFunction
 - (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
 - (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
 - (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+
+// NSTableViewDropFunction
+- (NSDragOperation)handleValidateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(nullable id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation;
+- (BOOL)handleAcceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>_Nullable)draggingInfo item:(nullable id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation;
+
+
+
+
+// NSCollection drag/drop handler
+
+
+
+// NSOutlineView drag/drop handler
 
 @end
 

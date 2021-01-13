@@ -22,6 +22,15 @@
 }
 
 
+- (NSImage *)snapshotWithView:(NSView *)view {
+    NSData *pdfData = [view dataWithPDFInsideRect: view.bounds];
+    NSImage *image = [[NSImage alloc] initWithData:pdfData];
+    if (image != nil) {
+        return image;
+    }
+    return [[NSImage alloc] init];
+}
+
 - (void)addAutoResizingView:(NSView *)containerView toView:(NSView *)toView
 {
     if (containerView != nil)

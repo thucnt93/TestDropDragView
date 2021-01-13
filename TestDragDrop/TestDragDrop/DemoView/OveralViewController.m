@@ -9,13 +9,14 @@
 #import "OveralViewController.h"
 #import "TableViewManager.h"
 #import "MockViewModel.h"
+#import "DropableNSButton.h"
 
-@interface OveralViewController ()<TableViewManagerProtocols> {
+@interface OveralViewController ()<TableViewManagerProtocols, DragTrackingDelegate, DropTrackingDelegate> {
     TableViewManager *_tableViewManager;
     MockViewModel *_mockViewModel;
 }
 
-@property (weak) IBOutlet NSButton *dragButton;
+@property (weak) IBOutlet DropableNSButton *dragButton;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSView *nsView;
 
@@ -34,11 +35,15 @@
     self.nsView.wantsLayer = YES;
     self.nsView.layer.backgroundColor = [[NSColor brownColor] CGColor];
     NSArray *initArray = @[@"TEST", @"TEST3",@"TEST3",@"TEST3",@"TEST3",@"TEST3",@"TEST3"];
+    
     NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
+    
     _mockViewModel = [[MockViewModel alloc] initWithModel:models];
     [_mockViewModel setupProvider];
     [_mockViewModel buildDataSource];
-    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider];
+    
+    
+    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
     
 }
 
@@ -48,8 +53,25 @@
 }
 
 - (NSUserInterfaceItemIdentifier)tableViewManager:(TableViewManager *)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id)item {
+    return @"CELLDEMO";
+}
+
+#pragma mark Drag - Drop tracking Delegate
+
+- (void)dragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session {
     
-    return @"Emoty string";
+    NSLog(@"OveralViewController - dragBeginWithTableViewManager");
+    
+}
+
+- (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
+    
+    NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
+}
+
+- (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+    
+    NSLog(@"OveralViewController - dragEndedWithTableViewManager");
 }
 
 @end

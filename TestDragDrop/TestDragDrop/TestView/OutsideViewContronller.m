@@ -6,17 +6,17 @@
 //  Copyright © 2020 Trung Nguyen. All rights reserved.
 //
 
-#import "OutsideViewContronller.h"
+//#import "OutsideViewContronller.h"
+//
+//@interface OutsideViewContronller ()
+//
+//@end
+//
+//@implementation OutsideViewContronller
+//
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    // Do view setup here.
+//}
 
-@interface OutsideViewContronller ()
-
-@end
-
-@implementation OutsideViewContronller
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do view setup here.
-}
-
-@end
+//@end

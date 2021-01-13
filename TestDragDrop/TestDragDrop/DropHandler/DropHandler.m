@@ -6,6 +6,12 @@
 //  Copyright © 2020 Trung Nguyen. All rights reserved.
 //
 
+/*
+ Change cursor
+ Drag on app
+ Drop 
+ */
+
 #import "DropHandler.h"
 
 #import "DraggableNSView.h"
@@ -88,5 +94,16 @@
     return operation == CustomDragOperation_NONE?NSDragOperationNone:NSDragOperationGeneric;
 }
 
+- (NSDragOperation)handleValidateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    
+    return NSDragOperationNone;
+}
+
+- (BOOL)handleAcceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>)draggingInfo item:(id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    
+    return YES;
+}
 
 @end

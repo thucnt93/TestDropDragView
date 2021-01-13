@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AppKit/NSPasteboard.h>
+#import <AppKit/NSDragging.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DropableNSButton : NSButton<NSDraggingDestination>
+@interface DropableNSButton : NSButton<NSDraggingSource, NSDraggingDestination, NSPasteboardItemDataProvider>
 
 @end
 

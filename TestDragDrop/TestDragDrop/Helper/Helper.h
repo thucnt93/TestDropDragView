@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Helper : NSObject
 + (instancetype)sharedInstance;
+- (NSImage *)snapshotWithView:(NSView *)view;
 @end
 
 NS_ASSUME_NONNULL_END

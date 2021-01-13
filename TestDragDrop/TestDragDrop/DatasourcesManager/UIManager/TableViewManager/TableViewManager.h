@@ -11,6 +11,22 @@
 @class TableViewManager;
 @class DataProvider;
 @protocol ListSupplierProtocol;
+@protocol DropTrackingDelegate;
+@protocol DragTrackingDelegate;
+
+#import "DragHandler.h"
+#import "DropHandler.h"
+
+/*
+ tableViewManager -> include tableView delegate and datasource
+ 
+ 
+ Nsview -> using drop handler -> call tracking delegate -> implement delegate in presentating view
+ NstableView -> using drop/drop handler in view that have manager > Manager call tracking delegate -> implement in view that using manager(presenting View)
+ 
+ ==> conclude: drag drop handler is many same function
+ ==> what will in drag drop handler
+ */
 
 @protocol TableViewManagerProtocols <NSObject>
 
@@ -187,7 +203,11 @@
 
 /// Initializes
 ///
-- (instancetype)initWithTableView:(NSTableView * _Nonnull)tableView source:(id<TableViewManagerProtocols>)source provider:(DataProvider * _Nonnull)provider;
+- (instancetype)initWithTableView:(NSTableView * _Nonnull)tableView
+                           source:(id<TableViewManagerProtocols>)source
+                         provider:(DataProvider * _Nonnull)provider
+            dragTrackingDelegates:(id<DragTrackingDelegate>)dragTrackingDelegate
+             dropTrackingDelegates:(id<DropTrackingDelegate>)dropTrackingDelegate;
 
 /// TableViewManager methods
 ///

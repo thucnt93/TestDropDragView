@@ -18,6 +18,7 @@
 		106E2AA125958E8A000CEE3B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9F25958E8A000CEE3B /* TestViewController.m */; };
 		106E2AA225958E8A000CEE3B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AA025958E8A000CEE3B /* TestViewController.xib */; };
 		106E2AA625959F2B000CEE3B /* DragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AA525959F2B000CEE3B /* DragOperation.m */; };
+		1E17F22325AEB300002DAE88 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E17F22225AEB300002DAE88 /* CellView.xib */; };
 		1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5225AD8AC000586C3C /* DataProvider.m */; };
 		1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5B25AD8AC000586C3C /* CollectionViewManager.m */; };
 		1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */; };
@@ -68,6 +69,7 @@
 		106E2AA025958E8A000CEE3B /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		106E2AA425959F2B000CEE3B /* DragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragOperation.h; sourceTree = "<group>"; };
 		106E2AA525959F2B000CEE3B /* DragOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragOperation.m; sourceTree = "<group>"; };
+		1E17F22225AEB300002DAE88 /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		1E1D7A5225AD8AC000586C3C /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		1E1D7A5325AD8AC000586C3C /* DataProviderProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProviderProtocols.h; sourceTree = "<group>"; };
 		1E1D7A5425AD8AC000586C3C /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
@@ -143,13 +145,8 @@
 				1E92522A25AC62C200DDBDC8 /* DragHandler */,
 				1EA93EA125AD775500252456 /* DemoView */,
 				1EA93EA625AD7A3100252456 /* Helper */,
-				106B2585259469E100C4281B /* AppDelegate.h */,
-				106B2586259469E100C4281B /* AppDelegate.m */,
-				106B2588259469E300C4281B /* Assets.xcassets */,
-				106B2590259469E300C4281B /* TestDragDrop.entitlements */,
+				1E17F22625AEB4AC002DAE88 /* OtherStub */,
 				1EA93ED125AD857B00252456 /* Main.storyboard */,
-				106B258D259469E300C4281B /* Info.plist */,
-				106B258E259469E300C4281B /* main.m */,
 				1E92522C25AC631F00DDBDC8 /* TestView */,
 			);
 			path = TestDragDrop;
@@ -170,6 +167,19 @@
 				106E2A9425958737000CEE3B /* AppKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E17F22625AEB4AC002DAE88 /* OtherStub */ = {
+			isa = PBXGroup;
+			children = (
+				106B2585259469E100C4281B /* AppDelegate.h */,
+				106B2586259469E100C4281B /* AppDelegate.m */,
+				106B2588259469E300C4281B /* Assets.xcassets */,
+				106B2590259469E300C4281B /* TestDragDrop.entitlements */,
+				106B258D259469E300C4281B /* Info.plist */,
+				106B258E259469E300C4281B /* main.m */,
+			);
+			path = OtherStub;
 			sourceTree = "<group>";
 		};
 		1E1D7A5025AD8AC000586C3C /* DatasourcesManager */ = {
@@ -299,6 +309,7 @@
 				1EA93E7A25AD596B00252456 /* OveralViewController.m */,
 				1E1D7A6825ADA49300586C3C /* MockViewModel.h */,
 				1E1D7A6925ADA49300586C3C /* MockViewModel.m */,
+				1E17F22225AEB300002DAE88 /* CellView.xib */,
 			);
 			path = DemoView;
 			sourceTree = "<group>";
@@ -398,6 +409,7 @@
 				106B2589259469E300C4281B /* Assets.xcassets in Resources */,
 				1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */,
 				106E2AA225958E8A000CEE3B /* TestViewController.xib in Resources */,
+				1E17F22325AEB300002DAE88 /* CellView.xib in Resources */,
 				1EA93ECC25AD850000252456 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,7 +595,7 @@
 				CODE_SIGN_ENTITLEMENTS = TestDragDrop/TestDragDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = TestDragDrop/Info.plist;
+				INFOPLIST_FILE = TestDragDrop/OtherStub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -600,7 +612,7 @@
 				CODE_SIGN_ENTITLEMENTS = TestDragDrop/TestDragDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = TestDragDrop/Info.plist;
+				INFOPLIST_FILE = TestDragDrop/OtherStub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
