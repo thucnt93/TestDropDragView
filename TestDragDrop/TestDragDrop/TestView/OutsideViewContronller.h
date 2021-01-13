@@ -6,7 +6,6 @@
 //  Copyright © 2020 Trung Nguyen. All rights reserved.
 //
 
-
 //#import <Cocoa/Cocoa.h>
 //
 //NS_ASSUME_NONNULL_BEGIN
