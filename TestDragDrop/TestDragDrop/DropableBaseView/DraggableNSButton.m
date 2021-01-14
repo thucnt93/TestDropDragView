@@ -1,5 +1,5 @@
 //
-//  DropableNSButton.m
+//  DraggableNSButton.m
 //  TestDragDrop
 //
 //  Created by Thuc Nguyen on 12/01/2021.
@@ -23,10 +23,10 @@
  */
 
 
-#import "DropableNSButton.h"
+#import "DraggableNSButton.h"
 #import "Helper.h"
 
-@implementation DropableNSButton
+@implementation DraggableNSButton
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];

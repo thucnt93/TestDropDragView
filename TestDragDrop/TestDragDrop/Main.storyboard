@@ -97,10 +97,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-Dg-rvx">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-Dg-rvx" customClass="DroppableNSView">
                                 <rect key="frame" x="320" y="20" width="261" height="265"/>
                             </customView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BLs-AF-kBc" customClass="DropableNSButton">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BLs-AF-kBc" customClass="DraggableNSButton">
                                 <rect key="frame" x="18" y="302" width="104" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="CwC-ug-c66"/>

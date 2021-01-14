@@ -9,7 +9,8 @@
 #import "OveralViewController.h"
 #import "TableViewManager.h"
 #import "MockViewModel.h"
-#import "DropableNSButton.h"
+#import "DraggableNSButton.h"
+#import "DroppableNSView.h"
 
 @interface OveralViewController ()<TableViewManagerProtocols, DragTrackingDelegate, DropTrackingDelegate> {
     TableViewManager *_tableViewManager;
@@ -17,9 +18,10 @@
     NSMutableArray *_accounts;
 }
 
-@property (weak) IBOutlet DropableNSButton *dragButton;
+
+@property (weak) IBOutlet DraggableNSButton *dragButton;
 @property (weak) IBOutlet NSTableView *tableView;
-@property (weak) IBOutlet NSView *nsView;
+@property (weak) IBOutlet DroppableNSView *nsView;
 
 @end
 
@@ -40,18 +42,23 @@
     _mockViewModel = [[MockViewModel alloc] initWithModel:models];
     [_mockViewModel setupProvider];
     [_mockViewModel buildDataSource];
+    
+    [self setupTrackingDragDrop];
+}
+
+- (void)setupTrackingDragDrop {
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
+    self.nsView.dropTrackingDelegate = self;
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
     return 40.0;
 }
 
-/*
+// TAKE A NOTE, SHOULD REMOVE THIS FUNCTION
 - (NSUserInterfaceItemIdentifier)tableViewManager:(TableViewManager *)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id)item {
-    return @"CELLDEMO";
+    return @"";
 }
- */
 
 - (NSTableRowView *)tableViewManager:(TableViewManager *)manager rowViewForRow:(NSInteger)row byItem:(id)item {
     NSTextField *label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 280, 40)];
@@ -61,21 +68,17 @@
     return rowView;
 }
 
-#pragma mark Drag tracking Delegate
+#pragma mark Drag tracking Delegate TABLEVIEW
 
 - (void)dragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session {
-    
     NSLog(@"OveralViewController - dragBeginWithTableViewManager");
-    
 }
 
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
-    
     NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
 }
 
 - (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
-    
     NSLog(@"OveralViewController - dragEndedWithTableViewManager");
 }
 
@@ -84,19 +87,7 @@
     return _accounts[row];
 }
 
-/*
-- (BOOL)writeToPasteboardWithTableViewManager:(TableViewManager *)manager writeRowsWithIndexes:(NSIndexSet *)rowIndexes items:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard {
-
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
-        [pasteboard declareTypes:[NSArray arrayWithObject:NSPasteboardTypeString] owner:self];
-        [pasteboard setData:data forType:NSPasteboardTypeString];
-//        sourceIndex = [rowIndexes firstIndex];
-    return YES;
-}
- */
-
-
-#pragma mark Drop tracking Delegate
+#pragma mark Drop tracking Delegate TABLEVIEW
 
 - (NSDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     NSDragOperation ret = NSDragOperationMove;
@@ -108,17 +99,32 @@
         }
     }
     manager.tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
-
     return ret;
 }
 
 - (BOOL)acceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>)draggingInfo item:(id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation{
     NSPasteboard *pasteBoard = draggingInfo.draggingPasteboard;
     NSString *dragMee = [pasteBoard stringForType:NSPasteboardTypeString];
-    NSLog(@"Did accept drop %@", dragMee);
     [_accounts insertObject:dragMee atIndex:row];
     [self.tableView reloadData];
     return YES;
+}
+
+
+#pragma mark - NSVIEW DRAG / DROP
+
+- (BOOL)performDropOnTarget:(id)onTarget draggingSource:(id)draggingSource {
+    
+    NSLog(@"perform drag and drop");
+    
+    return YES;
+}
+
+- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
+    
+    NSLog(@"dragUpdatedOnTarget");
+    
+    return CustomDragOperation_MOVE;
 }
 
 @end

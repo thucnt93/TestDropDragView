@@ -28,7 +28,7 @@
 		1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */; };
 		1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */; };
 		1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E7A25AD596B00252456 /* OveralViewController.m */; };
-		1EA93E8F25AD758C00252456 /* DropableNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E8E25AD758C00252456 /* DropableNSButton.m */; };
+		1EA93E8F25AD758C00252456 /* DraggableNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E8E25AD758C00252456 /* DraggableNSButton.m */; };
 		1EA93EAB25AD7A7900252456 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93EAA25AD7A7900252456 /* Helper.m */; };
 		1EA93ECC25AD850000252456 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA93ECA25AD850000252456 /* MainMenu.xib */; };
 		1EA93ED225AD857B00252456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA93ED125AD857B00252456 /* Main.storyboard */; };
@@ -90,8 +90,8 @@
 		1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutsideViewContronller.xib; sourceTree = "<group>"; };
 		1EA93E7925AD596B00252456 /* OveralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OveralViewController.h; sourceTree = "<group>"; };
 		1EA93E7A25AD596B00252456 /* OveralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OveralViewController.m; sourceTree = "<group>"; };
-		1EA93E8D25AD758C00252456 /* DropableNSButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropableNSButton.h; sourceTree = "<group>"; };
-		1EA93E8E25AD758C00252456 /* DropableNSButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropableNSButton.m; sourceTree = "<group>"; };
+		1EA93E8D25AD758C00252456 /* DraggableNSButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DraggableNSButton.h; sourceTree = "<group>"; };
+		1EA93E8E25AD758C00252456 /* DraggableNSButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DraggableNSButton.m; sourceTree = "<group>"; };
 		1EA93EA925AD7A7900252456 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		1EA93EAA25AD7A7900252456 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		1EA93ECB25AD850000252456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -285,8 +285,8 @@
 			children = (
 				106E2A9925958B15000CEE3B /* DroppableNSView.h */,
 				106E2A9A25958B15000CEE3B /* DroppableNSView.m */,
-				1EA93E8D25AD758C00252456 /* DropableNSButton.h */,
-				1EA93E8E25AD758C00252456 /* DropableNSButton.m */,
+				1EA93E8D25AD758C00252456 /* DraggableNSButton.h */,
+				1EA93E8E25AD758C00252456 /* DraggableNSButton.m */,
 				1E92523725AC673B00DDBDC8 /* DropableNSTableView.h */,
 				1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */,
 			);
@@ -442,7 +442,7 @@
 				106B258F259469E300C4281B /* main.m in Sources */,
 				1E92523925AC673B00DDBDC8 /* DropableNSTableView.m in Sources */,
 				1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */,
-				1EA93E8F25AD758C00252456 /* DropableNSButton.m in Sources */,
+				1EA93E8F25AD758C00252456 /* DraggableNSButton.m in Sources */,
 				1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */,
 				106B2587259469E100C4281B /* AppDelegate.m in Sources */,
 				1EA93EAB25AD7A7900252456 /* Helper.m in Sources */,

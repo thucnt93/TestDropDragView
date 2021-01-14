@@ -1,5 +1,5 @@
 //
-//  DropableNSButton.h
+//  DraggableNSButton.h
 //  TestDragDrop
 //
 //  Created by Thuc Nguyen on 12/01/2021.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DropableNSButton : NSButton<NSDraggingSource, NSDraggingDestination, NSPasteboardItemDataProvider>
+@interface DraggableNSButton : NSButton<NSDraggingSource, NSDraggingDestination, NSPasteboardItemDataProvider>
 
 @end
 
