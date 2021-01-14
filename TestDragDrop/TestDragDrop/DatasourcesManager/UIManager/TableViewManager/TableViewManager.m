@@ -59,7 +59,8 @@
             _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:dragTrackingDelegate];
             _dropHandler = [[DropHandler alloc] initWithDropTrackingDelegate:dropTrackingDelegate];
             
-            [_tableView registerForDraggedTypes: [NSArray arrayWithObjects: (id)kUTTypeData, NSFilenamesPboardType, nil]];
+            [self.tableView registerForDraggedTypes: [NSArray arrayWithObjects: (id)kUTTypeData,NSPasteboardTypeString, NSPasteboardTypeFileURL, NSPasteboardTypeURL, nil]];
+//            [_tableView registerForDraggedTypes: [NSArray arrayWithObjects: (id)kUTTypeData, NSFilenamesPboardType, nil]];
         }
         else
         {
@@ -549,7 +550,12 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:writeRowsWithIndexes:items:toPasteboard:)])
+        /*
+         
+       
+         - (BOOL)writeToPasteboardWithTableViewManager:(TableViewManager *)manager writeRowsWithIndexes:(NSIndexSet *)rowIndexes items:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard
+         */
+        if (self.protocols && [self.protocols respondsToSelector:@selector(writeToPasteboardWithTableViewManager:writeRowsWithIndexes:items:toPasteboard:)])
         {
             NSArray<id<ListSupplierProtocol>> *items = [_provider objectsForRowIndexes:rowIndexes];
             
@@ -562,7 +568,21 @@
         NSLog(@"%s-[%d] exception - reason = %@, [NSThread callStackSymbols] = %@", __PRETTY_FUNCTION__, __LINE__, exception.reason, [NSThread callStackSymbols]);
     }
     
-    return NO;
+    return YES;
+}
+
+- (id<NSPasteboardWriting>)tableView:(NSTableView *)tableView pasteboardWriterForRow:(NSInteger)row {
+    
+    if (self.protocols && [self.protocols respondsToSelector:@selector(pasteboardWriterWithTableViewManager:writeRow:item:)])
+    {
+        NSIndexPath *indexPath = [[NSIndexPath alloc] initWithIndex:row];
+        id<ListSupplierProtocol> item = [_provider objectForItemAtIndexPath:indexPath];
+
+//            return [self.protocols tableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
+        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
+    }
+    
+    return nil;
 }
 
 /**
@@ -572,9 +592,8 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(validateDropWithTableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
         {
-//            return [self.protocols tableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
             return [_dropHandler handleValidateDropWithTableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
         }
     }
@@ -593,9 +612,9 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:acceptDrop:item:row:dropOperation:)])
+        NSLog(@"Did accept drop");
+        if (self.protocols && [self.protocols respondsToSelector:@selector(acceptDropWithTableViewManager:acceptDrop:item:row:dropOperation:)])
         {
-//            return [self.protocols tableViewManager:self acceptDrop:info item:[_provider objectForRow:row] row:row dropOperation:dropOperation];
             return [_dropHandler handleAcceptDropWithTableViewManager:self acceptDrop:info item:[_provider objectForRow:row] row:row dropOperation:dropOperation];
         }
     }

@@ -106,6 +106,15 @@
     return YES;
 }
 
+- (id<NSPasteboardWriting>)handlePasteboardWriterWithTableViewManager:(TableViewManager *)manager writeRow:(NSInteger)row item:(id<ListSupplierProtocol>)item {
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(pasteboardWriterWithTableViewManager:writeRow:item:)])
+    {
+        return [_trackingDelegate pasteboardWriterWithTableViewManager:manager writeRow:row item:item];
+    }
+    
+    return nil;
+}
+
 
 
 

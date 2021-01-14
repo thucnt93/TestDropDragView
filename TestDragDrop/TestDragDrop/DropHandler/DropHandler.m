@@ -94,15 +94,24 @@
     return operation == CustomDragOperation_NONE?NSDragOperationNone:NSDragOperationGeneric;
 }
 
+
+#pragma mark - Drag Drop action
+
 - (NSDragOperation)handleValidateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
-    
+    if (_dropTrackingDelegate != nil && [_dropTrackingDelegate respondsToSelector:@selector(validateDropWithTableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
+    {
+        return [_dropTrackingDelegate validateDropWithTableViewManager:manager validateDrop:draggingInfo proposedItem:item proposedRow:row proposedDropOperation:dropOperation];
+    }
     return NSDragOperationNone;
 }
 
 - (BOOL)handleAcceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>)draggingInfo item:(id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
     
-    
+    if (_dropTrackingDelegate != nil && [_dropTrackingDelegate respondsToSelector:@selector(validateDropWithTableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
+    {
+        return [_dropTrackingDelegate acceptDropWithTableViewManager:manager acceptDrop:draggingInfo item:item row:row dropOperation:dropOperation];
+    }
     return YES;
 }
 
