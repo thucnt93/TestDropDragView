@@ -58,6 +58,9 @@
     [DragOperation changeCursorByOperation:NSNotFound];
 }
 
+
+#pragma mark - TableView DRAG
+
 - (void)handlerDidDragTableColumnWithTableManager:(TableViewManager *)manager didDragTableColumn:(NSTableColumn *)tableColumn {
     
     NSLog(@"handle did drag table column");

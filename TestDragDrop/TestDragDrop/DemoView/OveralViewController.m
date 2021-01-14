@@ -11,6 +11,7 @@
 #import "MockViewModel.h"
 #import "DraggableNSButton.h"
 #import "DroppableNSView.h"
+#import "DraggableNSView.h"
 
 @interface OveralViewController ()<TableViewManagerProtocols, DragTrackingDelegate, DropTrackingDelegate> {
     TableViewManager *_tableViewManager;
@@ -22,6 +23,7 @@
 @property (weak) IBOutlet DraggableNSButton *dragButton;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet DroppableNSView *nsView;
+@property (weak) IBOutlet DraggableNSView *nsDraggableView;
 
 @end
 
@@ -36,6 +38,7 @@
 - (void)setUpView {
     self.nsView.wantsLayer = YES;
     self.nsView.layer.backgroundColor = [[NSColor brownColor] CGColor];
+    
     NSArray *initArray = @[@"TEST", @"TEST1",@"TEST2",@"TEST3",@"TEST4",@"TEST5",@"TEST6", @"TEST7"];
     _accounts = [[NSMutableArray alloc] initWithArray:initArray];
     NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
@@ -47,8 +50,12 @@
 }
 
 - (void)setupTrackingDragDrop {
+    
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
+    
     self.nsView.dropTrackingDelegate = self;
+    
+    self.nsDraggableView.dragTrackingDelegate = self;
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -110,8 +117,20 @@
     return YES;
 }
 
+#pragma mark - NSVIEW DRAG
 
-#pragma mark - NSVIEW DRAG / DROP
+//- (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
+//    
+//    return <#expression#>;
+//}
+//
+//- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
+//    
+//    return <#expression#>;
+//}
+
+
+#pragma mark - NSVIEW DROP
 
 - (BOOL)performDropOnTarget:(id)onTarget draggingSource:(id)draggingSource {
     
@@ -126,5 +145,7 @@
     
     return CustomDragOperation_MOVE;
 }
+
+
 
 @end

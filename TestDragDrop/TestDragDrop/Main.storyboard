@@ -111,15 +111,22 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aXk-A0-Q8v" customClass="DraggableNSView">
+                                <rect key="frame" x="481" y="305" width="100" height="50"/>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="aXk-A0-Q8v" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="top" id="4Gh-2T-O09"/>
                             <constraint firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" constant="20" id="H3X-Ij-mDg"/>
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="top" secondItem="YGW-f3-udY" secondAttribute="top" constant="20" id="J7F-nP-fed"/>
+                            <constraint firstItem="aXk-A0-Q8v" firstAttribute="height" secondItem="BLs-AF-kBc" secondAttribute="height" id="JGV-mM-rc9"/>
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="Lof-MR-Pby"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="bottom" constant="20" id="S9N-Kl-6g4"/>
                             <constraint firstAttribute="bottom" secondItem="Ycd-Dg-rvx" secondAttribute="bottom" constant="20" id="SjW-Ub-dlV"/>
                             <constraint firstItem="Ycd-Dg-rvx" firstAttribute="width" secondItem="aRC-yF-sIm" secondAttribute="width" id="TSb-XU-IW2"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="UHY-zy-gWA"/>
+                            <constraint firstItem="aXk-A0-Q8v" firstAttribute="width" secondItem="BLs-AF-kBc" secondAttribute="width" id="bSU-mX-H7v"/>
+                            <constraint firstItem="aXk-A0-Q8v" firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" id="qL6-ET-HmG"/>
                             <constraint firstAttribute="bottom" secondItem="aRC-yF-sIm" secondAttribute="bottom" constant="20" id="skm-RF-GgQ"/>
                             <constraint firstItem="Ycd-Dg-rvx" firstAttribute="top" secondItem="aRC-yF-sIm" secondAttribute="top" id="xtf-fe-qQt"/>
                             <constraint firstItem="Ycd-Dg-rvx" firstAttribute="leading" secondItem="bGM-au-xkZ" secondAttribute="trailing" constant="40" id="zgs-yY-g6o"/>
@@ -127,6 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="dragButton" destination="BLs-AF-kBc" id="R4C-Ki-NyE"/>
+                        <outlet property="nsDraggableView" destination="aXk-A0-Q8v" id="LEu-54-19r"/>
                         <outlet property="nsView" destination="Ycd-Dg-rvx" id="jE1-fZ-KZi"/>
                         <outlet property="tableView" destination="bGM-au-xkZ" id="1v5-LD-8ES"/>
                     </connections>
