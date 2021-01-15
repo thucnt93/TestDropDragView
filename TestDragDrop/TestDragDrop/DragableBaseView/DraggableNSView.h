@@ -17,6 +17,7 @@
 @property (nonatomic, assign) id<DragTrackingDelegate> dragTrackingDelegate;
 
 @property (nonatomic) BOOL disableDragTracking;
+@property (strong, nonatomic) NSString *titleData;
            
 @end
 

@@ -24,6 +24,7 @@
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet DroppableNSView *nsView;
 @property (weak) IBOutlet DraggableNSView *nsDraggableView;
+@property (weak) IBOutlet NSTextField *titleDragView;
 
 @end
 
@@ -56,6 +57,8 @@
     self.nsView.dropTrackingDelegate = self;
     
     self.nsDraggableView.dragTrackingDelegate = self;
+    
+    self.nsDraggableView.titleData = self.titleDragView.stringValue;
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -117,7 +120,7 @@
     return YES;
 }
 
-#pragma mark - NSVIEW DRAG
+#pragma mark - NSVIEW DRAG DESTINATION
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
     
@@ -141,7 +144,7 @@
     
 }
 
-#pragma mark - NSVIEW DROP
+#pragma mark - NSVIEW DROP DESTINATION
 
 // Find out info about this view when return NO;
 - (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo {

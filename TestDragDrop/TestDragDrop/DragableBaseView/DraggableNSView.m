@@ -11,6 +11,7 @@
 @interface DraggableNSView ()<NSPasteboardItemDataProvider>
 {
     DragHandler *_dragHandler;
+    
 }
 
 @end
@@ -24,12 +25,9 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
-    
     // Drawing code here.
     [[NSColor brownColor] setFill];
-    
     NSRect frm = self.bounds;
-    
     NSBezierPath *path = [NSBezierPath bezierPathWithRect:frm];
     [path fill];
 }
@@ -51,22 +49,19 @@
     [pasteboard setData:tiffData forType:typeTIFF];
 }
 
-
-
 - (void)mouseDragged:(NSEvent *)theEvent
 {
     NSPasteboardItem *pbItem = [NSPasteboardItem new];
-    [pbItem setDataProvider:self forTypes:@[NSPasteboardTypeTIFF, NSPasteboardTypeURL]];
-
+    NSData *data = [self.titleData dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    [pbItem setData:data forType:NSPasteboardTypeString];
     NSDraggingItem *dragItem = [[NSDraggingItem alloc] initWithPasteboardWriter:pbItem];
-
     NSRect draggingRect = [self visibleRect];
 
     [dragItem setDraggingFrame:draggingRect contents:[self imageRepresentative]];
 
     //create a dragging session with our drag item and ourself as the source.
     NSDraggingSession *draggingSession = [self beginDraggingSessionWithItems:[NSArray arrayWithObject:dragItem] event:theEvent source:self];
-
+    
     //causes the dragging item to slide back to the source if the drag fails.
     draggingSession.animatesToStartingPositionsOnCancelOrFail = YES;
     draggingSession.draggingFormation = NSDraggingFormationNone;

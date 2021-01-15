@@ -115,18 +115,32 @@
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BLs-AF-kBc" customClass="DraggableNSButton">
-                                <rect key="frame" x="18" y="302" width="104" height="55"/>
+                                <rect key="frame" x="18" y="302" width="132" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="CwC-ug-c66"/>
                                     <constraint firstAttribute="height" constant="50" id="ZY9-tR-hrm"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" title="Dragg Me!!!" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55x-Dc-Zce">
+                                <buttonCell key="cell" type="bevel" title="Drag Button Me!!!" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55x-Dc-Zce">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="aXk-A0-Q8v" customClass="DraggableNSView">
-                                <rect key="frame" x="481" y="305" width="100" height="50"/>
+                                <rect key="frame" x="453" y="305" width="128" height="50"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Fm-j7-vH4">
+                                        <rect key="frame" x="8" y="17" width="112" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Drag View!!!" id="PBf-Lm-QJe">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6Fm-j7-vH4" firstAttribute="centerY" secondItem="aXk-A0-Q8v" secondAttribute="centerY" id="M6V-Hg-95X"/>
+                                    <constraint firstItem="6Fm-j7-vH4" firstAttribute="leading" secondItem="aXk-A0-Q8v" secondAttribute="leading" constant="10" id="VrX-Rz-Gl9"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Fm-j7-vH4" secondAttribute="trailing" constant="10" id="mW9-9e-9bX"/>
+                                </constraints>
                             </customView>
                         </subviews>
                         <constraints>
@@ -152,6 +166,7 @@
                         <outlet property="nsView" destination="Ycd-Dg-rvx" id="jE1-fZ-KZi"/>
                         <outlet property="resLabel" destination="7qU-mt-mLm" id="AEc-Td-12N"/>
                         <outlet property="tableView" destination="bGM-au-xkZ" id="1v5-LD-8ES"/>
+                        <outlet property="titleDragView" destination="6Fm-j7-vH4" id="VL8-De-zaQ"/>
                     </connections>
                 </viewController>
                 <customObject id="BoE-NN-ZLR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

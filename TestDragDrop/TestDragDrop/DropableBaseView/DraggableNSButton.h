@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DraggableNSButton : NSButton<NSDraggingSource, NSDraggingDestination, NSPasteboardItemDataProvider>
+@interface DraggableNSButton : NSButton<NSDraggingSource, NSDraggingDestination>
 
 @end
 
