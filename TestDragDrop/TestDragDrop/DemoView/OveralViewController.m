@@ -121,11 +121,17 @@
 }
 
 - (BOOL)acceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>)draggingInfo item:(id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation{
-    NSPasteboard *pasteBoard = draggingInfo.draggingPasteboard;
-    NSString *dragMeeButton = [pasteBoard stringForType:NSPasteboardTypeString];
-    [_accounts insertObject:dragMeeButton atIndex:row];
-    [self.tableView reloadData];
-    return YES;
+    
+    if (_enableDrop) {
+        [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
+        NSPasteboard *pasteBoard = draggingInfo.draggingPasteboard;
+        NSString *dragMeeButton = [pasteBoard stringForType:NSPasteboardTypeString];
+        [_accounts insertObject:dragMeeButton atIndex:row];
+        [self.tableView reloadData];
+        return YES;
+    }
+    [DragOperation changeCursorByOperation:CustomDragOperation_STOP];
+    return NO;
 }
 
 #pragma mark - NSVIEW DRAG SOURCE IMPLEMENT
@@ -133,14 +139,13 @@
 // At here we can change cursor dependence on bound View / OR note needed to change cursor,
 // because in drop destination we have a validation function in drag update to determine cursor
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-
     NSLog(@"Drag begin with source at point");
-    return CustomDragOperation_STOP;
+    return CustomDragOperation_MOVE;
 }
-
 
 /*
  Should not change cursor here because it trace location and set flash cursor
+ Only optional
  */
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
 
@@ -159,7 +164,7 @@
     NSLog(@"Drag end with source at point");
     
 //    self.resLabel.stringValue = @"";
-    
+    self.resLabel.stringValue = @"DRAG END AT POINT";
 }
 
 #pragma mark - NSVIEW DROP DESTINATION IMPLEMENT
@@ -182,9 +187,6 @@
         return CustomDragOperation_LEFT;
     }
     return CustomDragOperation_STOP;
-
 }
-
-
 
 @end

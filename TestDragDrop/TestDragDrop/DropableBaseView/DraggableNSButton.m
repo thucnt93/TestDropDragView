@@ -83,29 +83,5 @@
     [super mouseDragged:event];
 }
 
-- (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender {
-    
-    return NSDragOperationNone;
-}
-
-- (NSDragOperation)draggingUpdated:(id<NSDraggingInfo>)sender {
-    
-    return NSDragOperationNone;
-}
-
-- (BOOL)performDragOperation:(id<NSDraggingInfo>)sender {
-    
-    return YES;
-}
-
-- (void)draggingEnded:(id<NSDraggingInfo>)sender {
-    
-}
-
-- (NSDragOperation)draggingSession:(nonnull NSDraggingSession *)session sourceOperationMaskForDraggingContext:(NSDraggingContext)context {
-    
-    return NSDragOperationEvery;
-}
-
 
 @end

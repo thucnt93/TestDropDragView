@@ -24,7 +24,6 @@
 		1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */; };
 		1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A6125AD8AC000586C3C /* TableViewManager.m */; };
 		1E1D7A6A25ADA49300586C3C /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A6925ADA49300586C3C /* MockViewModel.m */; };
-		1E92523925AC673B00DDBDC8 /* DropableNSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */; };
 		1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */; };
 		1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */; };
 		1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E7A25AD596B00252456 /* OveralViewController.m */; };
@@ -83,8 +82,6 @@
 		1E1D7A6125AD8AC000586C3C /* TableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewManager.m; sourceTree = "<group>"; };
 		1E1D7A6825ADA49300586C3C /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
 		1E1D7A6925ADA49300586C3C /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
-		1E92523725AC673B00DDBDC8 /* DropableNSTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropableNSTableView.h; sourceTree = "<group>"; };
-		1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropableNSTableView.m; sourceTree = "<group>"; };
 		1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutsideViewContronller.h; sourceTree = "<group>"; };
 		1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutsideViewContronller.m; sourceTree = "<group>"; };
 		1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutsideViewContronller.xib; sourceTree = "<group>"; };
@@ -287,8 +284,6 @@
 				106E2A9A25958B15000CEE3B /* DroppableNSView.m */,
 				1EA93E8D25AD758C00252456 /* DraggableNSButton.h */,
 				1EA93E8E25AD758C00252456 /* DraggableNSButton.m */,
-				1E92523725AC673B00DDBDC8 /* DropableNSTableView.h */,
-				1E92523825AC673B00DDBDC8 /* DropableNSTableView.m */,
 			);
 			path = DropableBaseView;
 			sourceTree = "<group>";
@@ -440,7 +435,6 @@
 				1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */,
 				106E2A9825958A3C000CEE3B /* DropHandler.m in Sources */,
 				106B258F259469E300C4281B /* main.m in Sources */,
-				1E92523925AC673B00DDBDC8 /* DropableNSTableView.m in Sources */,
 				1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */,
 				1EA93E8F25AD758C00252456 /* DraggableNSButton.m in Sources */,
 				1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */,

@@ -56,6 +56,11 @@
     }
 }
 
+- (void)draggingEnded:(id<NSDraggingInfo>)sender {
+    NSLog(@"Drag end ==========");
+}
+
+
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)draggingInfo
 {
     if (_dropHandler != nil)
