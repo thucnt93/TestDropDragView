@@ -17,6 +17,7 @@
     TableViewManager *_tableViewManager;
     MockViewModel *_mockViewModel;
     NSMutableArray *_accounts;
+    BOOL _enableDrop;
 }
 
 @property (weak) IBOutlet NSTextField *resLabel;
@@ -25,6 +26,7 @@
 @property (weak) IBOutlet DroppableNSView *nsView;
 @property (weak) IBOutlet DraggableNSView *nsDraggableView;
 @property (weak) IBOutlet NSTextField *titleDragView;
+@property (weak) IBOutlet NSSwitch *switchEnableDrop;
 
 @end
 
@@ -37,6 +39,8 @@
 }
 
 - (void)setUpView {
+    _enableDrop = NO;
+    self.resLabel.stringValue = @"";
     self.nsView.wantsLayer = YES;
     self.nsView.layer.backgroundColor = [[NSColor brownColor] CGColor];
     
@@ -48,6 +52,10 @@
     [_mockViewModel buildDataSource];
     
     [self setupTrackingDragDrop];
+}
+
+- (IBAction)enableDrop:(id)sender {
+    _enableDrop = ((NSSwitch *)sender).state;
 }
 
 - (void)setupTrackingDragDrop {
@@ -114,61 +122,67 @@
 
 - (BOOL)acceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>)draggingInfo item:(id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation{
     NSPasteboard *pasteBoard = draggingInfo.draggingPasteboard;
-    NSString *dragMee = [pasteBoard stringForType:NSPasteboardTypeString];
-    [_accounts insertObject:dragMee atIndex:row];
+    NSString *dragMeeButton = [pasteBoard stringForType:NSPasteboardTypeString];
+    [_accounts insertObject:dragMeeButton atIndex:row];
     [self.tableView reloadData];
     return YES;
 }
 
-#pragma mark - NSVIEW DRAG DESTINATION
-
+#pragma mark - NSVIEW DRAG SOURCE IMPLEMENT
+///////////////////////////////////////////////////////////////////////////////////////////////
+// At here we can change cursor dependence on bound View / OR note needed to change cursor,
+// because in drop destination we have a validation function in drag update to determine cursor
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-    
+
     NSLog(@"Drag begin with source at point");
-    
     return CustomDragOperation_STOP;
 }
 
+
+/*
+ Should not change cursor here because it trace location and set flash cursor
+ */
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
-    
+
     NSLog(@"Drag move with source at point");
     
-    return CustomDragOperation_STOP;
+    NSPoint locationInwindow = [self.nsView.window convertPointFromScreen:atPoint];
+    NSPoint point = [self.nsView convertPoint:locationInwindow fromView:nil];
+    if (NSPointInRect(point, self.nsView.bounds)) {
+        return CustomDragOperation_LINK;
+    }
+    return CustomDragOperation_MOVE;
 }
 
 - (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
     
     NSLog(@"Drag end with source at point");
     
-    self.resLabel.stringValue = @"";
+//    self.resLabel.stringValue = @"";
     
 }
 
-#pragma mark - NSVIEW DROP DESTINATION
-
+#pragma mark - NSVIEW DROP DESTINATION IMPLEMENT
+///////////////////////////////////////////////////////////////////////////////////////////////
 // Find out info about this view when return NO;
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo {
+- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo
+{
     NSLog(@"perform drag and drop");
-    NSLog(@"dragUpdatedOnTarget");
     NSString *draggingInfoString = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-    
-    if (draggingInfoString == nil) {
-        self.resLabel.stringValue = @"DRAGVIEW";
-    } else {
-        self.resLabel.stringValue = draggingInfoString;
-    }
-    
+    self.resLabel.stringValue = draggingInfoString;
     return YES;
 }
 
-
 //TODO: Update cursor here, validate here
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
-    
+
     NSLog(@"dragUpdatedOnTarget with info");
-    
-    return CustomDragOperation_MOVE;
-    
+
+    if (_enableDrop) {
+        return CustomDragOperation_LEFT;
+    }
+    return CustomDragOperation_STOP;
+
 }
 
 

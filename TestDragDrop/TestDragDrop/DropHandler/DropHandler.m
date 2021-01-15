@@ -93,7 +93,7 @@
         
     [DragOperation changeCursorByOperation:operation];
     
-    return operation == CustomDragOperation_NONE?NSDragOperationNone:NSDragOperationGeneric;
+    return (operation == CustomDragOperation_NONE || operation == CustomDragOperation_STOP)?NSDragOperationNone:NSDragOperationGeneric;
 }
 
 

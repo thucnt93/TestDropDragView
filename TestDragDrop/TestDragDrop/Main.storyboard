@@ -142,18 +142,27 @@
                                     <constraint firstAttribute="trailing" secondItem="6Fm-j7-vH4" secondAttribute="trailing" constant="10" id="mW9-9e-9bX"/>
                                 </constraints>
                             </customView>
+                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="34B-gM-yeK">
+                                <rect key="frame" x="280" y="317" width="42" height="25"/>
+                                <connections>
+                                    <action selector="enableDrop:" target="tZ3-g4-Tqi" id="b9e-ws-LPE"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="top" id="4Gh-2T-O09"/>
                             <constraint firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" constant="20" id="H3X-Ij-mDg"/>
+                            <constraint firstItem="34B-gM-yeK" firstAttribute="top" secondItem="YGW-f3-udY" secondAttribute="top" constant="34" id="Ih9-hx-7Hk"/>
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="top" secondItem="YGW-f3-udY" secondAttribute="top" constant="20" id="J7F-nP-fed"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="height" secondItem="BLs-AF-kBc" secondAttribute="height" id="JGV-mM-rc9"/>
+                            <constraint firstItem="34B-gM-yeK" firstAttribute="centerX" secondItem="YGW-f3-udY" secondAttribute="centerX" id="LOh-nb-1ir"/>
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="Lof-MR-Pby"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="bottom" constant="20" id="S9N-Kl-6g4"/>
                             <constraint firstAttribute="bottom" secondItem="Ycd-Dg-rvx" secondAttribute="bottom" constant="20" id="SjW-Ub-dlV"/>
                             <constraint firstItem="Ycd-Dg-rvx" firstAttribute="width" secondItem="aRC-yF-sIm" secondAttribute="width" id="TSb-XU-IW2"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="UHY-zy-gWA"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="width" secondItem="BLs-AF-kBc" secondAttribute="width" id="bSU-mX-H7v"/>
+                            <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="34B-gM-yeK" secondAttribute="bottom" constant="34" id="p3c-Kb-DmF"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" id="qL6-ET-HmG"/>
                             <constraint firstAttribute="bottom" secondItem="aRC-yF-sIm" secondAttribute="bottom" constant="20" id="skm-RF-GgQ"/>
                             <constraint firstItem="Ycd-Dg-rvx" firstAttribute="top" secondItem="aRC-yF-sIm" secondAttribute="top" id="xtf-fe-qQt"/>
@@ -165,6 +174,7 @@
                         <outlet property="nsDraggableView" destination="aXk-A0-Q8v" id="LEu-54-19r"/>
                         <outlet property="nsView" destination="Ycd-Dg-rvx" id="jE1-fZ-KZi"/>
                         <outlet property="resLabel" destination="7qU-mt-mLm" id="AEc-Td-12N"/>
+                        <outlet property="switchEnableDrop" destination="34B-gM-yeK" id="jSA-eN-NdB"/>
                         <outlet property="tableView" destination="bGM-au-xkZ" id="1v5-LD-8ES"/>
                         <outlet property="titleDragView" destination="6Fm-j7-vH4" id="VL8-De-zaQ"/>
                     </connections>

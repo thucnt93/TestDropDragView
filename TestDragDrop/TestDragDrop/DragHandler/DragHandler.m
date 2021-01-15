@@ -34,6 +34,7 @@
     {
         CustomDragOperation operation = [_trackingDelegate dragBeginWithSource:source atPoint:atPoint];
         
+        NSLog(@"handleDragBeginWithSource");
         [DragOperation changeCursorByOperation:operation];
     }
 }
@@ -43,7 +44,7 @@
     if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(dragMoveWithSource:atPoint:)])
     {
         CustomDragOperation operation = [_trackingDelegate dragMoveWithSource:source atPoint:atPoint];
-    
+        NSLog(@"handleDragMoveWithSource");
         [DragOperation changeCursorByOperation:operation];
     }
 }
@@ -54,7 +55,7 @@
     {
          [_trackingDelegate dragEndWithSource:source atPoint:atPoint];
     }
-    
+    NSLog(@"handleDragEndWithSource");
     [DragOperation changeCursorByOperation:NSNotFound];
 }
 

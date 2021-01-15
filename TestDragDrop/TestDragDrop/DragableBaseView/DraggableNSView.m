@@ -11,7 +11,6 @@
 @interface DraggableNSView ()<NSPasteboardItemDataProvider>
 {
     DragHandler *_dragHandler;
-    
 }
 
 @end
