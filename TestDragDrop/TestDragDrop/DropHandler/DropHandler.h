@@ -23,26 +23,25 @@
 @end
 
 @interface DropHandler : NSObject
-
 - (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)delegate;
 
 // NSViewDropFunction
+#pragma mark - NSView drop handler action
 - (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
 - (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
 - (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
 
-// NSTableViewDropFunction
+#pragma mark - NSTableViewDrop handler action
 - (NSDragOperation)handleValidateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(nullable id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation;
 - (BOOL)handleAcceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>_Nullable)draggingInfo item:(nullable id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation;
 
 
 
-
-// NSCollection drag/drop handler
-
+#pragma mark - NSCollection drag/drop handler
 
 
-// NSOutlineView drag/drop handler
+
+#pragma mark - NSOutlineView drag/drop handler
 
 @end
 

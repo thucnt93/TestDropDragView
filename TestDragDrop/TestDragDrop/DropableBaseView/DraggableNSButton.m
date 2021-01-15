@@ -6,39 +6,20 @@
 //  Copyright © 2021 Trung Nguyen. All rights reserved.
 //
 
-/*
- 
- Change cursor
- 
- Change behavior drag drop -> tableView drag
- 
- Cancel + escap + notification error
- 
- Drag/Drop end event + webView(webView let after)
- 
- Drag at session + drop at session
- 
- Disable drag/ Disable drop
- 
- */
-
 
 #import "DraggableNSButton.h"
 #import "Helper.h"
 
 @implementation DraggableNSButton
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-    // Drawing code here.
-    self.wantsLayer = YES;
-    self.layer.backgroundColor = [[NSColor brownColor] CGColor];
-}
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self registerForDraggedTypes:[NSArray arrayWithObjects:(id)kUTTypeData, NSFilenamesPboardType, nil]];
+    
+    
+    self.wantsLayer = YES;
+    self.layer.backgroundColor = [[NSColor brownColor] CGColor];
+    
+    [self registerForDraggedTypes:[NSArray arrayWithObjects:(id)kUTTypeData, NSPasteboardTypeFileURL, nil]];
 }
 
 - (NSImage *)imageRepresentative
@@ -56,16 +37,12 @@
     NSPasteboardItem *pbItem = [NSPasteboardItem new];
     [pbItem setDataProvider:self forTypes:[NSArray arrayWithObjects:(id)kUTTypeData, nil]];
     
-    /*
-     
-     */
     NSString *titleStringButton;
     if (self.title == nil) {
         titleStringButton = self.stringValue;
     } else {
         titleStringButton = self.title;
     }
-    
     NSData *data = [titleStringButton dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     [pbItem setData:data forType:NSPasteboardTypeString];
     NSDraggingItem *dragItem = [[NSDraggingItem alloc] initWithPasteboardWriter:pbItem];
@@ -75,6 +52,7 @@
     
     //create a dragging session with our drag item and ourself as the source.
     NSDraggingSession *draggingSession = [self beginDraggingSessionWithItems:[NSArray arrayWithObject:dragItem] event:event source:self];
+    
     //causes the dragging item to slide back to the source if the drag fails.
     draggingSession.animatesToStartingPositionsOnCancelOrFail = YES;
     draggingSession.draggingFormation = NSDraggingFormationNone;
@@ -92,7 +70,7 @@
 }
 
 - (void)mouseUp:(NSEvent *)event {
-    
+    // Do nothing but it need to catch event mouseDragged
 }
 
 - (void)mouseDown:(NSEvent *)event {
@@ -117,7 +95,6 @@
 
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)sender {
     
-    
     return YES;
 }
 
@@ -125,32 +102,10 @@
     
 }
 
-- (void)pasteboard:(NSPasteboard *)sender provideDataForType:(NSPasteboardType)type {
-    
-}
-
-- (void)pasteboard:(NSPasteboard *)pasteboard item:(NSPasteboardItem *)item provideDataForType:(NSPasteboardType)type {
-    //    NSData *pdfData = [self dataWithPDFInsideRect: self.bounds];
-    //
-    //    [pasteboard setData:pdfData forType:(id)kUTTypeData];
-    NSString *titleStringButton;
-    if (self.title == nil) {
-        titleStringButton = self.stringValue;
-    } else {
-        titleStringButton = self.title;
-    }
-    
-    NSData *data = [titleStringButton dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    [pasteboard setData:data forType:NSPasteboardTypeString];
-}
-
-
-
 - (NSDragOperation)draggingSession:(nonnull NSDraggingSession *)session sourceOperationMaskForDraggingContext:(NSDraggingContext)context {
     
     return NSDragOperationEvery;
 }
-
 
 
 @end

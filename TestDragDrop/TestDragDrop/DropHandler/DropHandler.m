@@ -37,6 +37,8 @@
     return self;
 }
 
+#pragma mark - Drop action NSView
+
 - (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
 {
     _dragOperation = CustomDragOperation_NONE;
@@ -95,7 +97,7 @@
 }
 
 
-#pragma mark - Drag Drop action
+#pragma mark - Drop action tableView
 
 - (NSDragOperation)handleValidateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     

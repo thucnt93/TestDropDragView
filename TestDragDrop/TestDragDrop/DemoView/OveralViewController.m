@@ -121,15 +121,21 @@
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
     
+    NSLog(@"Drag begin with source at point");
+    
     return CustomDragOperation_STOP;
 }
 
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
     
+    NSLog(@"Drag move with source at point");
+    
     return CustomDragOperation_STOP;
 }
 
 - (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
+    
+    NSLog(@"Drag end with source at point");
     
     self.resLabel.stringValue = @"";
     
@@ -142,7 +148,13 @@
     NSLog(@"perform drag and drop");
     NSLog(@"dragUpdatedOnTarget");
     NSString *draggingInfoString = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-    self.resLabel.stringValue = draggingInfoString;
+    
+    if (draggingInfoString == nil) {
+        self.resLabel.stringValue = @"DRAGVIEW";
+    } else {
+        self.resLabel.stringValue = draggingInfoString;
+    }
+    
     return YES;
 }
 
@@ -150,7 +162,10 @@
 //TODO: Update cursor here, validate here
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
     
+    NSLog(@"dragUpdatedOnTarget with info");
+    
     return CustomDragOperation_MOVE;
+    
 }
 
 

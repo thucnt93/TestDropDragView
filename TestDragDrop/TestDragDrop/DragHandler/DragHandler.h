@@ -24,8 +24,8 @@
 
 
 // Handler in presenting view
-// question: delegate and datasource will implement in where => anser: in manager
-
+// delegate and datasource will implement in where => in manager
+#pragma mark - Drag TableView Delegate
 - (void)didDragTableColumnWithTableManager:(TableViewManager *)manager didDragTableColumn:(NSTableColumn *)tableColumn;
 - (void)dragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session;
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo;
@@ -46,6 +46,8 @@
 
 // TableViewDragHandler
 // handle in handler
+
+#pragma mark - tableView drag action handler
 - (void)handlerDidDragTableColumnWithTableManager:(TableViewManager *)manager didDragTableColumn:(NSTableColumn *)tableColumn;
 - (void)handleDragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes items:(NSArray *)items;
 - (void)handleUpdateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo;

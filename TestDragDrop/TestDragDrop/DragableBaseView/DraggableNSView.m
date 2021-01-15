@@ -128,10 +128,4 @@
     }
 }
 
-#pragma mark - NSPasteboardItemDataProvider
-
-//- (void)pasteboard:(NSPasteboard *)sender item:(NSPasteboardItem *)item provideDataForType:(NSString *)type
-//{
-//}
-
 @end
