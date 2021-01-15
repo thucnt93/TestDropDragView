@@ -90,10 +90,12 @@
 
 - (void)dragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session {
     NSLog(@"OveralViewController - dragBeginWithTableViewManager");
+    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
 }
 
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
+    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
 }
 
 - (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -114,9 +116,11 @@
         
         if ([[pboard types] containsObject:(id)kUTTypeData] || [[pboard types] containsObject:NSPasteboardTypeURL]) {
             ret = NSDragOperationGeneric;
+            [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
         }
     }
     manager.tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
+    
     return ret;
 }
 

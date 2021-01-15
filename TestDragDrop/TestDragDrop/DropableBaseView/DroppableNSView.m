@@ -56,19 +56,26 @@
     }
 }
 
-- (void)draggingEnded:(id<NSDraggingInfo>)sender {
-    NSLog(@"Drag end ==========");
-}
-
-
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)draggingInfo
 {
     if (_dropHandler != nil)
     {
-        return [_dropHandler handlePerformDraggingOperation:draggingInfo onTarget:self];
+        BOOL result = [_dropHandler handlePerformDraggingOperation:draggingInfo onTarget:self];
+        return result;
     }
     
     return NO;
 }
+
+- (void)concludeDragOperation:(id<NSDraggingInfo>)sender {
+    
+    NSLog(@"CONCLUDE DRAG OPERATION");
+}
+
+- (void)draggingEnded:(id<NSDraggingInfo>)sender {
+    NSLog(@"CONCLUDE DRAG OPERATION");
+}
+
+
 
 @end
