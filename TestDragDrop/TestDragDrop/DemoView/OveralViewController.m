@@ -19,7 +19,7 @@
     NSMutableArray *_accounts;
 }
 
-
+@property (weak) IBOutlet NSTextField *resLabel;
 @property (weak) IBOutlet DraggableNSButton *dragButton;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet DroppableNSView *nsView;
@@ -119,29 +119,36 @@
 
 #pragma mark - NSVIEW DRAG
 
-//- (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-//    
-//    return <#expression#>;
-//}
-//
-//- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
-//    
-//    return <#expression#>;
-//}
+- (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
+    
+    return CustomDragOperation_STOP;
+}
 
+- (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
+    
+    return CustomDragOperation_STOP;
+}
+
+- (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
+    
+    self.resLabel.stringValue = @"";
+    
+}
 
 #pragma mark - NSVIEW DROP
 
-- (BOOL)performDropOnTarget:(id)onTarget draggingSource:(id)draggingSource {
-    
+// Find out info about this view when return NO;
+- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"perform drag and drop");
-    
+    NSLog(@"dragUpdatedOnTarget");
+    NSString *draggingInfoString = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
+    self.resLabel.stringValue = draggingInfoString;
     return YES;
 }
 
+
+//TODO: Update cursor here, validate here
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
-    
-    NSLog(@"dragUpdatedOnTarget");
     
     return CustomDragOperation_MOVE;
 }

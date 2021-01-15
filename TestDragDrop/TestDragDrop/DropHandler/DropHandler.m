@@ -56,9 +56,9 @@
 
 - (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
 {
-    if (_dropTrackingDelegate != nil && [_dropTrackingDelegate respondsToSelector:@selector(performDropOnTarget:draggingSource:)])
+    if (_dropTrackingDelegate != nil && [_dropTrackingDelegate respondsToSelector:@selector(performDropOnTarget:draggingInfo:)])
     {
-        return [_dropTrackingDelegate performDropOnTarget:onTarget draggingSource:draggingInfo.draggingSource];
+        return [_dropTrackingDelegate performDropOnTarget:onTarget draggingInfo:draggingInfo];
     }
     
     return NO;
