@@ -83,12 +83,12 @@
 
 - (void)dragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session {
     NSLog(@"OveralViewController - dragBeginWithTableViewManager");
-    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
+//    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
 }
 
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
-    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
+//    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
 }
 
 - (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -104,13 +104,13 @@
 
 - (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
-    CustomDragOperation ret = CustomDragOperation_MOVE;
-    if (dropOperation == NSTableViewDropOn) {
-        if (_enableDrop) {
-            ret = CustomDragOperation_LEFT;
-        } else {
-            ret = CustomDragOperation_NONE;
-        }
+    CustomDragOperation ret;
+    if (_enableDrop) {
+        ret = CustomDragOperation_LEFT;
+        NSLog(@"=========THUC=====: left operation");
+    } else {
+        ret = CustomDragOperation_STOP;
+        NSLog(@"=========THUC=====: stop operation");
     }
     manager.tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
     return ret;

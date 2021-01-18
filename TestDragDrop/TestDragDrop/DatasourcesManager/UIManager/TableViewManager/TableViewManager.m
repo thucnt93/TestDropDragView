@@ -611,7 +611,8 @@
     {
         if (self.protocols && [self.protocols respondsToSelector:@selector(validateDropWithTableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
         {
-            return [_dropHandler handleValidateDropWithTableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
+            NSDragOperation op = [_dropHandler handleValidateDropWithTableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
+            return op;
         }
     }
     @catch (NSException *exception)

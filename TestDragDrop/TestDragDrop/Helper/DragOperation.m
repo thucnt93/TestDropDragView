@@ -25,6 +25,7 @@
     
     if (operation == CustomDragOperation_STOP)
     {
+        NSLog(@"====THUC====Stop cursor");
         cursorIcon = [NSImage imageNamed:@"cursor-stop"];
     }
     else if (operation == CustomDragOperation_LINK)
@@ -33,6 +34,7 @@
     }
     else if (operation == CustomDragOperation_MOVE)
     {
+        NSLog(@"====THUC====MOVE cursor");
         cursorIcon = [NSImage imageNamed:@"cursor-move"];
     }
     else if (operation == CustomDragOperation_LEFT)
