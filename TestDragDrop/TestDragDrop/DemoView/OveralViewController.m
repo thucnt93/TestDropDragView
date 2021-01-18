@@ -63,9 +63,7 @@
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
     
     self.nsView.dropTrackingDelegate = self;
-    
     self.nsDraggableView.dragTrackingDelegate = self;
-    
     self.nsDraggableView.titleData = self.titleDragView.stringValue;
 }
 
@@ -107,11 +105,7 @@
 - (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
     CustomDragOperation ret = CustomDragOperation_MOVE;
-    if (dropOperation == NSTableViewDropAbove) {
-//        NSPasteboard *pboard = [draggingInfo draggingPasteboard];
-//        if ([[pboard types] containsObject:(id)kUTTypeData] || [[pboard types] containsObject:NSPasteboardTypeURL]) {
-//            ret = CustomDragOperation_LEFT;
-//        }
+    if (dropOperation == NSTableViewDropOn) {
         if (_enableDrop) {
             ret = CustomDragOperation_LEFT;
         } else {
