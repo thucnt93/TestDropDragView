@@ -73,11 +73,6 @@
     return 40.0;
 }
 
-// TAKE A NOTE, SHOULD REMOVE THIS FUNCTION
-- (NSUserInterfaceItemIdentifier)tableViewManager:(TableViewManager *)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id)item {
-    return @"";
-}
-
 - (NSTableRowView *)tableViewManager:(TableViewManager *)manager rowViewForRow:(NSInteger)row byItem:(id)item {
     NSTextField *label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 280, 40)];
     label.stringValue = _accounts[row];
@@ -116,7 +111,7 @@
         
         if ([[pboard types] containsObject:(id)kUTTypeData] || [[pboard types] containsObject:NSPasteboardTypeURL]) {
             ret = NSDragOperationGeneric;
-            [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
+            
         }
     }
     manager.tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
@@ -155,10 +150,10 @@
 
     NSLog(@"Drag move with source at point");
     
-    NSPoint locationInwindow = [self.nsView.window convertPointFromScreen:atPoint];
-    NSPoint point = [self.nsView convertPoint:locationInwindow fromView:nil];
-    if (NSPointInRect(point, self.nsView.bounds)) {
-        return CustomDragOperation_LINK;
+    NSPoint locationInwindow = [self.tableView.window convertPointFromScreen:atPoint];
+    NSPoint point = [self.tableView convertPoint:locationInwindow fromView:nil];
+    if (NSPointInRect(point, self.tableView.bounds)) {
+        return CustomDragOperation_LEFT;
     }
     return CustomDragOperation_MOVE;
 }
