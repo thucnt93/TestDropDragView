@@ -103,7 +103,9 @@
     
     if (_dropTrackingDelegate != nil && [_dropTrackingDelegate respondsToSelector:@selector(validateDropWithTableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
     {
-        return [_dropTrackingDelegate validateDropWithTableViewManager:manager validateDrop:draggingInfo proposedItem:item proposedRow:row proposedDropOperation:dropOperation];
+        CustomDragOperation customoperation = [_dropTrackingDelegate validateDropWithTableViewManager:manager validateDrop:draggingInfo proposedItem:item proposedRow:row proposedDropOperation:dropOperation];
+        NSDragOperation operation = [self handleCustomDragOperation:customoperation draggingSource:draggingInfo.draggingSource];
+        return operation;
     }
     return NSDragOperationNone;
 }

@@ -104,32 +104,34 @@
 
 #pragma mark Drop tracking Delegate TABLEVIEW
 
-- (NSDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
-    NSDragOperation ret = NSDragOperationMove;
+- (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    CustomDragOperation ret = CustomDragOperation_MOVE;
     if (dropOperation == NSTableViewDropAbove) {
-        NSPasteboard *pboard = [draggingInfo draggingPasteboard];
-        
-        if ([[pboard types] containsObject:(id)kUTTypeData] || [[pboard types] containsObject:NSPasteboardTypeURL]) {
-            ret = NSDragOperationGeneric;
-            
+//        NSPasteboard *pboard = [draggingInfo draggingPasteboard];
+//        if ([[pboard types] containsObject:(id)kUTTypeData] || [[pboard types] containsObject:NSPasteboardTypeURL]) {
+//            ret = CustomDragOperation_LEFT;
+//        }
+        if (_enableDrop) {
+            ret = CustomDragOperation_LEFT;
+        } else {
+            ret = CustomDragOperation_NONE;
         }
     }
     manager.tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
-    
     return ret;
 }
 
 - (BOOL)acceptDropWithTableViewManager:(TableViewManager *)manager acceptDrop:(id<NSDraggingInfo>)draggingInfo item:(id)item row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation{
     
     if (_enableDrop) {
-        [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
         NSPasteboard *pasteBoard = draggingInfo.draggingPasteboard;
         NSString *dragMeeButton = [pasteBoard stringForType:NSPasteboardTypeString];
         [_accounts insertObject:dragMeeButton atIndex:row];
         [self.tableView reloadData];
         return YES;
     }
-    [DragOperation changeCursorByOperation:CustomDragOperation_STOP];
+    
     return NO;
 }
 
