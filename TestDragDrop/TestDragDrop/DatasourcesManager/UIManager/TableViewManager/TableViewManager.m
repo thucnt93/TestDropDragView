@@ -5,16 +5,7 @@
 //  Created by Lam Nguyen on 1/4/19.
 //  Copyright © 2019 Floware Inc. All rights reserved.
 //
-/*
- 1. cusom drag drop: like feature
- 2. make module: framework
- 
- 3. integrate to Flo, the most simple protocol
- 4. new member using this logic
- 5. demo drag/drop from cell to cell (like view to view)
- 6. drag drop frop other view to table view
 
- */
 #import "TableViewManager.h"
 
 #import "ItemCellViewProtocols.h"

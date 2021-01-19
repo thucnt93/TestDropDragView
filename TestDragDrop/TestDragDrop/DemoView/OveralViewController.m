@@ -83,12 +83,10 @@
 
 - (void)dragBeginWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session {
     NSLog(@"OveralViewController - dragBeginWithTableViewManager");
-//    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
 }
 
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
-//    [DragOperation changeCursorByOperation:CustomDragOperation_LEFT];
 }
 
 - (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -106,7 +104,7 @@
     
     CustomDragOperation ret;
     if (_enableDrop) {
-        ret = CustomDragOperation_LEFT;
+        ret = CustomDragOperation_ALLOW;
         NSLog(@"=========THUC=====: left operation");
     } else {
         ret = CustomDragOperation_STOP;
@@ -149,7 +147,7 @@
     NSPoint locationInwindow = [self.tableView.window convertPointFromScreen:atPoint];
     NSPoint point = [self.tableView convertPoint:locationInwindow fromView:nil];
     if (NSPointInRect(point, self.tableView.bounds)) {
-        return CustomDragOperation_LEFT;
+        return CustomDragOperation_STOP;
     }
     return CustomDragOperation_MOVE;
 }
@@ -179,7 +177,7 @@
     NSLog(@"dragUpdatedOnTarget with info");
 
     if (_enableDrop) {
-        return CustomDragOperation_LEFT;
+        return CustomDragOperation_ALLOW;
     }
     return CustomDragOperation_STOP;
 }

@@ -37,9 +37,9 @@
         NSLog(@"====THUC====MOVE cursor");
         cursorIcon = [NSImage imageNamed:@"cursor-move"];
     }
-    else if (operation == CustomDragOperation_LEFT)
+    else if (operation == CustomDragOperation_ALLOW)
     {
-        cursorIcon = [NSImage imageNamed:@"cursor-left"];
+        cursorIcon = [NSImage imageNamed:@"cursor-green"];
     }
     else if (operation == CustomDragOperation_RIGHT)
     {

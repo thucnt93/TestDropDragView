@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, CustomDragOperation)
     CustomDragOperation_STOP        = 128,
     CustomDragOperation_MOVE        = 128 << 1,
     CustomDragOperation_LINK        = 128 << 2,
-    CustomDragOperation_LEFT        = 128 << 3,
+    CustomDragOperation_ALLOW       = 128 << 3,
     CustomDragOperation_RIGHT       = 128 << 4,
     CustomDragOperation_NONE        = 128 << 10,
 };

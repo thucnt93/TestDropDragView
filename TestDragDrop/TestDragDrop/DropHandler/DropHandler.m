@@ -6,12 +6,6 @@
 //  Copyright © 2020 Trung Nguyen. All rights reserved.
 //
 
-/*
- Change cursor
- Drag on app
- Drop 
- */
-
 #import "DropHandler.h"
 
 #import "DraggableNSView.h"
