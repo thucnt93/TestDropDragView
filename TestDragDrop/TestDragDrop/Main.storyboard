@@ -97,22 +97,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ycd-Dg-rvx" customClass="DroppableNSView">
+                            <customView id="Ycd-Dg-rvx">
                                 <rect key="frame" x="320" y="20" width="261" height="265"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7qU-mt-mLm">
-                                        <rect key="frame" x="95" y="118" width="72" height="29"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Result" id="Nlo-rW-LQu">
-                                            <font key="font" metaFont="system" size="25"/>
-                                            <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="7qU-mt-mLm" firstAttribute="centerX" secondItem="Ycd-Dg-rvx" secondAttribute="centerX" id="Mhc-zy-OyI"/>
-                                    <constraint firstItem="7qU-mt-mLm" firstAttribute="centerY" secondItem="Ycd-Dg-rvx" secondAttribute="centerY" id="lwN-sm-I2B"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BLs-AF-kBc" customClass="DraggableNSButton">
                                 <rect key="frame" x="18" y="302" width="132" height="55"/>
@@ -159,9 +146,9 @@
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="Lof-MR-Pby"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="bottom" constant="20" id="S9N-Kl-6g4"/>
                             <constraint firstAttribute="bottom" secondItem="Ycd-Dg-rvx" secondAttribute="bottom" constant="20" id="SjW-Ub-dlV"/>
-                            <constraint firstItem="Ycd-Dg-rvx" firstAttribute="width" secondItem="aRC-yF-sIm" secondAttribute="width" id="TSb-XU-IW2"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="UHY-zy-gWA"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="width" secondItem="BLs-AF-kBc" secondAttribute="width" id="bSU-mX-H7v"/>
+                            <constraint firstItem="Ycd-Dg-rvx" firstAttribute="width" secondItem="bGM-au-xkZ" secondAttribute="width" multiplier="1.00772" id="gyF-Ft-U3c"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="34B-gM-yeK" secondAttribute="bottom" constant="34" id="p3c-Kb-DmF"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" id="qL6-ET-HmG"/>
                             <constraint firstAttribute="bottom" secondItem="aRC-yF-sIm" secondAttribute="bottom" constant="20" id="skm-RF-GgQ"/>
@@ -171,9 +158,8 @@
                     </view>
                     <connections>
                         <outlet property="dragButton" destination="BLs-AF-kBc" id="R4C-Ki-NyE"/>
+                        <outlet property="dropableView" destination="Ycd-Dg-rvx" id="aya-C0-YHn"/>
                         <outlet property="nsDraggableView" destination="aXk-A0-Q8v" id="LEu-54-19r"/>
-                        <outlet property="nsView" destination="Ycd-Dg-rvx" id="jE1-fZ-KZi"/>
-                        <outlet property="resLabel" destination="7qU-mt-mLm" id="AEc-Td-12N"/>
                         <outlet property="switchEnableDrop" destination="34B-gM-yeK" id="jSA-eN-NdB"/>
                         <outlet property="tableView" destination="bGM-au-xkZ" id="1v5-LD-8ES"/>
                         <outlet property="titleDragView" destination="6Fm-j7-vH4" id="VL8-De-zaQ"/>

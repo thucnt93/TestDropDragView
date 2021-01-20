@@ -31,21 +31,21 @@
     return [[NSImage alloc] init];
 }
 
-- (void)addAutoResizingView:(NSView *)containerView toView:(NSView *)toView
+- (void)addAutoResizingView:(NSView *)subView toView:(NSView *)containerView
 {
-    if (containerView != nil)
+    if (subView != nil)
     {
-        [toView addSubview:containerView];
+        [containerView addSubview:subView];
         
         [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
         
-        [toView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[containerView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(containerView)]];
-        [toView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[containerView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(containerView)]];
+        [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[subView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(subView)]];
+        [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[subView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(subView)]];
         
         // Should force update view constraints for update UI correctly.
         // [FM-1270] Show flashing for Flo app when open with Compact mode.
-        [toView layoutSubtreeIfNeeded];
-        [toView.superview layoutSubtreeIfNeeded];
+        [containerView layoutSubtreeIfNeeded];
+        [containerView.superview layoutSubtreeIfNeeded];
     }
 }
 

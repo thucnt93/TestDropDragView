@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Helper : NSObject
 + (instancetype)sharedInstance;
 - (NSImage *)snapshotWithView:(NSView *)view;
+- (void)addAutoResizingView:(NSView *)subView toView:(NSView *)containerView;
 @end
 
 NS_ASSUME_NONNULL_END

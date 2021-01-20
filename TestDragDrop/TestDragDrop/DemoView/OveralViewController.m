@@ -12,18 +12,20 @@
 #import "DraggableNSButton.h"
 #import "DroppableNSView.h"
 #import "DraggableNSView.h"
+#import "DemoDropView.h"
+#import "Helper.h"
 
 @interface OveralViewController ()<TableViewManagerProtocols, DragTrackingDelegate, DropTrackingDelegate> {
     TableViewManager *_tableViewManager;
     MockViewModel *_mockViewModel;
     NSMutableArray *_accounts;
     BOOL _enableDrop;
+    DemoDropView *_demoDropView;
 }
 
-@property (weak) IBOutlet NSTextField *resLabel;
 @property (weak) IBOutlet DraggableNSButton *dragButton;
 @property (weak) IBOutlet NSTableView *tableView;
-@property (weak) IBOutlet DroppableNSView *nsView;
+@property (weak) IBOutlet NSView *dropableView;
 @property (weak) IBOutlet DraggableNSView *nsDraggableView;
 @property (weak) IBOutlet NSTextField *titleDragView;
 @property (weak) IBOutlet NSSwitch *switchEnableDrop;
@@ -40,9 +42,8 @@
 
 - (void)setUpView {
     _enableDrop = NO;
-    self.resLabel.stringValue = @"";
-    self.nsView.wantsLayer = YES;
-    self.nsView.layer.backgroundColor = [[NSColor brownColor] CGColor];
+    self.dropableView.wantsLayer = YES;
+    self.dropableView.layer.backgroundColor = [[NSColor brownColor] CGColor];
     
     NSArray *initArray = @[@"TEST", @"TEST1",@"TEST2",@"TEST3",@"TEST4",@"TEST5",@"TEST6", @"TEST7"];
     _accounts = [[NSMutableArray alloc] initWithArray:initArray];
@@ -54,15 +55,23 @@
     [self setupTrackingDragDrop];
 }
 
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    _demoDropView = [[DemoDropView alloc] init];
+    [[Helper sharedInstance] addAutoResizingView:_demoDropView toView:self.dropableView];
+    
+}
+
 - (IBAction)enableDrop:(id)sender {
     _enableDrop = ((NSSwitch *)sender).state;
+    [_demoDropView updateDropEnable:_enableDrop];
 }
 
 - (void)setupTrackingDragDrop {
     
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
     
-    self.nsView.dropTrackingDelegate = self;
+//    self.nsView.dropTrackingDelegate = self;
     self.nsDraggableView.dragTrackingDelegate = self;
     self.nsDraggableView.titleData = self.titleDragView.stringValue;
     
@@ -129,61 +138,6 @@
     }
     
     return NO;
-}
-
-#pragma mark - NSVIEW DRAG SOURCE IMPLEMENT
-///////////////////////////////////////////////////////////////////////////////////////////////
-// At here we can change cursor dependence on bound View / OR note needed to change cursor,
-// because in drop destination we have a validation function in drag update to determine cursor
-- (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-    NSLog(@"Drag begin with source at point");
-    return CustomDragOperation_MOVE;
-}
-
-/*
- Should not change cursor here because it trace location and set flash cursor
- Only optional
- */
-//- (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
-//
-//    NSLog(@"Drag move with source at point");
-//
-//    NSPoint locationInwindow = [self.tableView.window convertPointFromScreen:atPoint];
-//    NSPoint point = [self.tableView convertPoint:locationInwindow fromView:nil];
-//    if (NSPointInRect(point, self.tableView.bounds)) {
-//        return CustomDragOperation_STOP;
-//    }
-//    return CustomDragOperation_MOVE;
-//}
-
-- (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
-    
-    NSLog(@"Drag end with source at point");
-    
-//    self.resLabel.stringValue = @"";
-    self.resLabel.stringValue = @"DRAG END AT POINT";
-}
-
-#pragma mark - NSVIEW DROP DESTINATION IMPLEMENT
-///////////////////////////////////////////////////////////////////////////////////////////////
-// Find out info about this view when return NO;
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo
-{
-    NSLog(@"perform drag and drop");
-    NSString *draggingInfoString = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-    self.resLabel.stringValue = draggingInfoString;
-    return YES;
-}
-
-//TODO: Update cursor here, validate here
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
-
-    NSLog(@"dragUpdatedOnTarget with info");
-
-    if (_enableDrop) {
-        return CustomDragOperation_ALLOW;
-    }
-    return CustomDragOperation_STOP;
 }
 
 @end
