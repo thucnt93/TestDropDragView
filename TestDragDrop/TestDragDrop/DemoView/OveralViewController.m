@@ -65,6 +65,8 @@
     self.nsView.dropTrackingDelegate = self;
     self.nsDraggableView.dragTrackingDelegate = self;
     self.nsDraggableView.titleData = self.titleDragView.stringValue;
+    
+    self.dragButton.dragTrackingDelegate = self;
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -87,6 +89,8 @@
 
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
+    
+    
 }
 
 - (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -140,17 +144,17 @@
  Should not change cursor here because it trace location and set flash cursor
  Only optional
  */
-- (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
-
-    NSLog(@"Drag move with source at point");
-    
-    NSPoint locationInwindow = [self.tableView.window convertPointFromScreen:atPoint];
-    NSPoint point = [self.tableView convertPoint:locationInwindow fromView:nil];
-    if (NSPointInRect(point, self.tableView.bounds)) {
-        return CustomDragOperation_STOP;
-    }
-    return CustomDragOperation_MOVE;
-}
+//- (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
+//
+//    NSLog(@"Drag move with source at point");
+//
+//    NSPoint locationInwindow = [self.tableView.window convertPointFromScreen:atPoint];
+//    NSPoint point = [self.tableView convertPoint:locationInwindow fromView:nil];
+//    if (NSPointInRect(point, self.tableView.bounds)) {
+//        return CustomDragOperation_STOP;
+//    }
+//    return CustomDragOperation_MOVE;
+//}
 
 - (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
     

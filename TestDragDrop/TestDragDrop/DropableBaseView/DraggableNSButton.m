@@ -10,16 +10,25 @@
 #import "DraggableNSButton.h"
 #import "Helper.h"
 
+
+@interface DraggableNSButton() {
+    DragHandler *_dragHandler;
+}
+
+@end
+
 @implementation DraggableNSButton
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    
     self.wantsLayer = YES;
     self.layer.backgroundColor = [[NSColor brownColor] CGColor];
-    
     [self registerForDraggedTypes:[NSArray arrayWithObjects:(id)kUTTypeData, NSPasteboardTypeFileURL, nil]];
+}
+
+- (void)setDragTrackingDelegate:(id)dragTrackingDelegate {
+    _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:dragTrackingDelegate];
 }
 
 - (NSImage *)imageRepresentative
@@ -81,6 +90,18 @@
 {
     [self setDraggingSessionWithEvent:event];
     [super mouseDragged:event];
+}
+
+- (void)draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint {
+    [_dragHandler handleDragBeginWithSource:self atPoint:screenPoint];
+}
+
+- (void)draggingSession:(NSDraggingSession *)session movedToPoint:(NSPoint)screenPoint {
+    [_dragHandler handleDragMoveWithSource:self atPoint:screenPoint];
+}
+
+- (void)draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+    [_dragHandler handleDragEndWithSource:self atPoint:screenPoint];
 }
 
 

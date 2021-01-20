@@ -125,7 +125,7 @@
 //        [self addAutoResizingView:outsideViewController.view toView:self.outsideView];
 //    }
     
-    [DragOperation changeCursorByOperation:CustomDragOperation_NONE];
+//    [DragOperation changeCursorByOperation:CustomDragOperation_NONE];
     
     // At here, we push a callback to that view
 }

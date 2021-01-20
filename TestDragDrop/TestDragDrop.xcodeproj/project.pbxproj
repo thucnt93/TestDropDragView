@@ -24,6 +24,10 @@
 		1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */; };
 		1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A6125AD8AC000586C3C /* TableViewManager.m */; };
 		1E1D7A6A25ADA49300586C3C /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A6925ADA49300586C3C /* MockViewModel.m */; };
+		1E6DAD9025B7D88400920A04 /* DemoDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DAD8F25B7D88400920A04 /* DemoDragView.m */; };
+		1E6DAD9525B7D8AA00920A04 /* DemoDragButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DAD9425B7D8AA00920A04 /* DemoDragButton.m */; };
+		1E6DAD9A25B7D8F700920A04 /* DemoDropTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DAD9925B7D8F700920A04 /* DemoDropTableView.m */; };
+		1E6DADA125B7D94700920A04 /* DemoDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DADA025B7D94700920A04 /* DemoDropView.m */; };
 		1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */; };
 		1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */; };
 		1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E7A25AD596B00252456 /* OveralViewController.m */; };
@@ -82,6 +86,14 @@
 		1E1D7A6125AD8AC000586C3C /* TableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewManager.m; sourceTree = "<group>"; };
 		1E1D7A6825ADA49300586C3C /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
 		1E1D7A6925ADA49300586C3C /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
+		1E6DAD8E25B7D88400920A04 /* DemoDragView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDragView.h; sourceTree = "<group>"; };
+		1E6DAD8F25B7D88400920A04 /* DemoDragView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDragView.m; sourceTree = "<group>"; };
+		1E6DAD9325B7D8AA00920A04 /* DemoDragButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDragButton.h; sourceTree = "<group>"; };
+		1E6DAD9425B7D8AA00920A04 /* DemoDragButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDragButton.m; sourceTree = "<group>"; };
+		1E6DAD9825B7D8F700920A04 /* DemoDropTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDropTableView.h; sourceTree = "<group>"; };
+		1E6DAD9925B7D8F700920A04 /* DemoDropTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDropTableView.m; sourceTree = "<group>"; };
+		1E6DAD9F25B7D94700920A04 /* DemoDropView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDropView.h; sourceTree = "<group>"; };
+		1E6DADA025B7D94700920A04 /* DemoDropView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDropView.m; sourceTree = "<group>"; };
 		1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutsideViewContronller.h; sourceTree = "<group>"; };
 		1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutsideViewContronller.m; sourceTree = "<group>"; };
 		1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutsideViewContronller.xib; sourceTree = "<group>"; };
@@ -305,6 +317,14 @@
 				1E1D7A6825ADA49300586C3C /* MockViewModel.h */,
 				1E1D7A6925ADA49300586C3C /* MockViewModel.m */,
 				1E17F22225AEB300002DAE88 /* CellView.xib */,
+				1E6DAD8E25B7D88400920A04 /* DemoDragView.h */,
+				1E6DAD8F25B7D88400920A04 /* DemoDragView.m */,
+				1E6DAD9325B7D8AA00920A04 /* DemoDragButton.h */,
+				1E6DAD9425B7D8AA00920A04 /* DemoDragButton.m */,
+				1E6DAD9825B7D8F700920A04 /* DemoDropTableView.h */,
+				1E6DAD9925B7D8F700920A04 /* DemoDropTableView.m */,
+				1E6DAD9F25B7D94700920A04 /* DemoDropView.h */,
+				1E6DADA025B7D94700920A04 /* DemoDropView.m */,
 			);
 			path = DemoView;
 			sourceTree = "<group>";
@@ -428,17 +448,21 @@
 				1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */,
 				106E2AA625959F2B000CEE3B /* DragOperation.m in Sources */,
 				1E1D7A6A25ADA49300586C3C /* MockViewModel.m in Sources */,
+				1E6DAD9525B7D8AA00920A04 /* DemoDragButton.m in Sources */,
 				106B25A625946A2900C4281B /* DraggableNSView.m in Sources */,
 				1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */,
 				106E2AA125958E8A000CEE3B /* TestViewController.m in Sources */,
 				106E2A9B25958B15000CEE3B /* DroppableNSView.m in Sources */,
+				1E6DAD9025B7D88400920A04 /* DemoDragView.m in Sources */,
 				1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */,
 				106E2A9825958A3C000CEE3B /* DropHandler.m in Sources */,
 				106B258F259469E300C4281B /* main.m in Sources */,
 				1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */,
 				1EA93E8F25AD758C00252456 /* DraggableNSButton.m in Sources */,
+				1E6DADA125B7D94700920A04 /* DemoDropView.m in Sources */,
 				1E1D7A6525AD8AC000586C3C /* TableViewManager.m in Sources */,
 				106B2587259469E100C4281B /* AppDelegate.m in Sources */,
+				1E6DAD9A25B7D8F700920A04 /* DemoDropTableView.m in Sources */,
 				1EA93EAB25AD7A7900252456 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

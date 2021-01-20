@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import <AppKit/NSPasteboard.h>
 #import <AppKit/NSDragging.h>
+#import "DragHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DraggableNSButton : NSButton<NSDraggingSource, NSDraggingDestination>
 
+@property (strong, nonatomic) id<DragTrackingDelegate> dragTrackingDelegate;
 @end
 
 NS_ASSUME_NONNULL_END
