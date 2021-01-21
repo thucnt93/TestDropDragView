@@ -36,7 +36,7 @@
             <objects>
                 <viewController id="tZ3-g4-Tqi" customClass="OveralViewController" sceneMemberID="viewController">
                     <view key="view" id="YGW-f3-udY">
-                        <rect key="frame" x="0.0" y="0.0" width="601" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="599" height="375"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-yF-sIm">
@@ -102,35 +102,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BLs-AF-kBc" customClass="DraggableNSButton">
-                                <rect key="frame" x="18" y="302" width="132" height="55"/>
+                                <rect key="frame" x="17" y="301" width="132" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZY9-tR-hrm"/>
+                                    <constraint firstAttribute="width" constant="126" id="aa9-sl-KIu"/>
                                 </constraints>
                                 <buttonCell key="cell" type="bevel" title="Drag Button Me!!!" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55x-Dc-Zce">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aXk-A0-Q8v" customClass="DraggableNSView">
-                                <rect key="frame" x="453" y="305" width="128" height="50"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Fm-j7-vH4">
-                                        <rect key="frame" x="8" y="17" width="112" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Drag View!!!" id="PBf-Lm-QJe">
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="6Fm-j7-vH4" firstAttribute="centerY" secondItem="aXk-A0-Q8v" secondAttribute="centerY" id="M6V-Hg-95X"/>
-                                    <constraint firstItem="6Fm-j7-vH4" firstAttribute="leading" secondItem="aXk-A0-Q8v" secondAttribute="leading" constant="10" id="VrX-Rz-Gl9"/>
-                                    <constraint firstAttribute="trailing" secondItem="6Fm-j7-vH4" secondAttribute="trailing" constant="10" id="mW9-9e-9bX"/>
-                                </constraints>
+                            <customView horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-A0-Q8v">
+                                <rect key="frame" x="453" y="305" width="126" height="50"/>
                             </customView>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="34B-gM-yeK">
-                                <rect key="frame" x="280" y="317" width="42" height="25"/>
+                                <rect key="frame" x="279" y="317" width="42" height="25"/>
                                 <connections>
                                     <action selector="enableDrop:" target="tZ3-g4-Tqi" id="b9e-ws-LPE"/>
                                 </connections>
@@ -147,8 +133,8 @@
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="bottom" constant="20" id="S9N-Kl-6g4"/>
                             <constraint firstAttribute="bottom" secondItem="Ycd-Dg-rvx" secondAttribute="bottom" constant="20" id="SjW-Ub-dlV"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="UHY-zy-gWA"/>
-                            <constraint firstItem="aXk-A0-Q8v" firstAttribute="width" secondItem="BLs-AF-kBc" secondAttribute="width" id="bSU-mX-H7v"/>
-                            <constraint firstItem="Ycd-Dg-rvx" firstAttribute="width" secondItem="bGM-au-xkZ" secondAttribute="width" multiplier="1.00772" id="gyF-Ft-U3c"/>
+                            <constraint firstItem="Ycd-Dg-rvx" firstAttribute="width" secondItem="bGM-au-xkZ" secondAttribute="width" id="gyF-Ft-U3c"/>
+                            <constraint firstItem="aXk-A0-Q8v" firstAttribute="width" secondItem="BLs-AF-kBc" secondAttribute="width" id="h7a-tk-j3M"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="34B-gM-yeK" secondAttribute="bottom" constant="34" id="p3c-Kb-DmF"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" id="qL6-ET-HmG"/>
                             <constraint firstAttribute="bottom" secondItem="aRC-yF-sIm" secondAttribute="bottom" constant="20" id="skm-RF-GgQ"/>
@@ -162,7 +148,6 @@
                         <outlet property="nsDraggableView" destination="aXk-A0-Q8v" id="LEu-54-19r"/>
                         <outlet property="switchEnableDrop" destination="34B-gM-yeK" id="jSA-eN-NdB"/>
                         <outlet property="tableView" destination="bGM-au-xkZ" id="1v5-LD-8ES"/>
-                        <outlet property="titleDragView" destination="6Fm-j7-vH4" id="VL8-De-zaQ"/>
                     </connections>
                 </viewController>
                 <customObject id="BoE-NN-ZLR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

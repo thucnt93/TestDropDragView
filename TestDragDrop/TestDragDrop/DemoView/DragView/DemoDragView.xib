@@ -12,6 +12,20 @@
         <customView identifier="DemoDragView" id="c22-O7-iKe" customClass="DemoDragView">
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IxQ-ib-Lo8">
+                    <rect key="frame" x="209" y="122" width="63" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="KMq-Nh-S2T">
+                        <font key="font" metaFont="system" size="25"/>
+                        <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="IxQ-ib-Lo8" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="Dsx-Et-9aW"/>
+                <constraint firstItem="IxQ-ib-Lo8" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="rmG-V5-Vk6"/>
+            </constraints>
             <point key="canvasLocation" x="-143" y="78"/>
         </customView>
     </objects>

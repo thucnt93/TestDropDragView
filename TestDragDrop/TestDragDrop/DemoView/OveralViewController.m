@@ -13,6 +13,7 @@
 #import "DroppableNSView.h"
 #import "DraggableNSView.h"
 #import "DemoDropView.h"
+#import "DemoDragView.h"
 #import "Helper.h"
 
 @interface OveralViewController ()<TableViewManagerProtocols, DragTrackingDelegate, DropTrackingDelegate> {
@@ -21,12 +22,13 @@
     NSMutableArray *_accounts;
     BOOL _enableDrop;
     DemoDropView *_demoDropView;
+    DemoDragView *_demoDragView;
 }
 
 @property (weak) IBOutlet DraggableNSButton *dragButton;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSView *dropableView;
-@property (weak) IBOutlet DraggableNSView *nsDraggableView;
+@property (weak) IBOutlet NSView *nsDraggableView;
 @property (weak) IBOutlet NSTextField *titleDragView;
 @property (weak) IBOutlet NSSwitch *switchEnableDrop;
 
@@ -59,6 +61,8 @@
     [super viewWillAppear];
     _demoDropView = [[DemoDropView alloc] init];
     [[Helper sharedInstance] addAutoResizingView:_demoDropView toView:self.dropableView];
+    _demoDragView = [[DemoDragView alloc] init];
+    [[Helper sharedInstance] addAutoResizingView:_demoDragView toView:self.nsDraggableView];
     
 }
 
@@ -72,8 +76,8 @@
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
     
 //    self.nsView.dropTrackingDelegate = self;
-    self.nsDraggableView.dragTrackingDelegate = self;
-    self.nsDraggableView.titleData = self.titleDragView.stringValue;
+//    self.nsDraggableView.dragTrackingDelegate = self;
+//    self.nsDraggableView.titleData = self.titleDragView.stringValue;
     
     self.dragButton.dragTrackingDelegate = self;
 }
