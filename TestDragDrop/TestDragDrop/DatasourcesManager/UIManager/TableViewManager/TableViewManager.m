@@ -38,8 +38,6 @@
 - (instancetype)initWithTableView:(NSTableView * _Nonnull)tableView
                            source:(id<TableViewManagerProtocols>)source
                          provider:(DataProvider * _Nonnull)provider
-            dragTrackingDelegates:(id<DragTrackingDelegate>)dragTrackingDelegate
-            dropTrackingDelegates:(id<DropTrackingDelegate>)dropTrackingDelegate
 {
     if (self = [super init])
     {
@@ -57,8 +55,6 @@
             [_tableView setTarget:self];
             [_tableView setAction:@selector(tableViewDidSelectItem)];
             [_tableView setDoubleAction:@selector(tableViewDidDoubleSelectItem)];
-            _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:dragTrackingDelegate];
-            _dropHandler = [[DropHandler alloc] initWithDropTrackingDelegate:dropTrackingDelegate];
             
             [self.tableView registerForDraggedTypes: [NSArray arrayWithObjects: (id)kUTTypeData,NSPasteboardTypeString, NSPasteboardTypeFileURL, NSPasteboardTypeURL, nil]];
 //            [_tableView registerForDraggedTypes: [NSArray arrayWithObjects: (id)kUTTypeData, NSFilenamesPboardType, nil]];
@@ -74,12 +70,13 @@
     return self;
 }
 
-// Need to readOnly
-// Need to declare
-// Needed
-//setDragHandler{
-//
-//}
+- (void)setDropTrackingDelegate:(id<DropTrackingDelegate>)dropTrackingDelegate {
+    _dropHandler = [[DropHandler alloc] initWithDropTrackingDelegate:dropTrackingDelegate];
+}
+
+- (void)setDragTrackingDelegate:(id<DragTrackingDelegate>)dragTrackingDelegate {
+    _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:dragTrackingDelegate];
+}
 
 - (void)dealloc
 {

@@ -6,27 +6,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="DemoDragView">
+            <connections>
+                <outlet property="titleLabel" destination="IxQ-ib-Lo8" id="wzb-eR-pt6"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView identifier="DemoDragView" id="c22-O7-iKe" customClass="DemoDragView">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <customView identifier="DemoDragView" autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c22-O7-iKe" customClass="DemoDragView">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="94"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IxQ-ib-Lo8">
-                    <rect key="frame" x="209" y="122" width="63" height="29"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="KMq-Nh-S2T">
-                        <font key="font" metaFont="system" size="25"/>
-                        <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                    <rect key="frame" x="-2" y="38" width="224" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="KMq-Nh-S2T">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="IxQ-ib-Lo8" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="Dsx-Et-9aW"/>
-                <constraint firstItem="IxQ-ib-Lo8" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="rmG-V5-Vk6"/>
+                <constraint firstItem="IxQ-ib-Lo8" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="FPn-pQ-uZc"/>
+                <constraint firstItem="IxQ-ib-Lo8" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="VbH-aM-zE2"/>
+                <constraint firstAttribute="trailing" secondItem="IxQ-ib-Lo8" secondAttribute="trailing" id="cPf-O0-jge"/>
             </constraints>
-            <point key="canvasLocation" x="-143" y="78"/>
+            <connections>
+                <outlet property="titleLabel" destination="IxQ-ib-Lo8" id="kBY-LO-hrV"/>
+            </connections>
+            <point key="canvasLocation" x="-274" y="149"/>
         </customView>
     </objects>
 </document>

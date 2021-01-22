@@ -25,10 +25,6 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     // Drawing code here.
-    [[NSColor brownColor] setFill];
-    NSRect frm = self.bounds;
-    NSBezierPath *path = [NSBezierPath bezierPathWithRect:frm];
-    [path fill];
 }
 
 #pragma mark - Getter/Setter
@@ -51,6 +47,10 @@
 - (void)mouseDragged:(NSEvent *)theEvent
 {
     NSPasteboardItem *pbItem = [NSPasteboardItem new];
+    
+    if (self.titleData == nil) {
+        self.titleData = @"Need to set data";
+    }
     NSData *data = [self.titleData dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     [pbItem setData:data forType:NSPasteboardTypeString];
     NSDraggingItem *dragItem = [[NSDraggingItem alloc] initWithPasteboardWriter:pbItem];

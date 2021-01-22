@@ -205,12 +205,13 @@
 ///
 - (instancetype)initWithTableView:(NSTableView * _Nonnull)tableView
                            source:(id<TableViewManagerProtocols>)source
-                         provider:(DataProvider * _Nonnull)provider
-            dragTrackingDelegates:(id<DragTrackingDelegate>)dragTrackingDelegate
-             dropTrackingDelegates:(id<DropTrackingDelegate>)dropTrackingDelegate;
+                         provider:(DataProvider * _Nonnull)provider;
 
 /// TableViewManager methods
 ///
 - (void)reloadData;
+
+@property (strong, nonatomic) id<DragTrackingDelegate> _Nullable dragTrackingDelegate;
+@property (strong, nonatomic) id<DropTrackingDelegate> _Nullable dropTrackingDelegate;
 
 @end

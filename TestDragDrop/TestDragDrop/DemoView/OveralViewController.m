@@ -72,14 +72,9 @@
 }
 
 - (void)setupTrackingDragDrop {
-    
-    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider dragTrackingDelegates:self dropTrackingDelegates:self];
-    
-//    self.nsView.dropTrackingDelegate = self;
-//    self.nsDraggableView.dragTrackingDelegate = self;
-//    self.nsDraggableView.titleData = self.titleDragView.stringValue;
-    
-    self.dragButton.dragTrackingDelegate = self;
+    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider:_mockViewModel.provider];
+    [_tableViewManager setDragTrackingDelegate:self];
+    [_tableViewManager setDropTrackingDelegate:self];
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -103,7 +98,6 @@
 - (void)updateDraggingWithTableViewManager:(TableViewManager *)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"OveralViewController - updateDraggingWithTableViewManager");
     
-    
 }
 
 - (void)dragEndedWithTableViewManager:(TableViewManager *)manager draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -119,7 +113,7 @@
 
 - (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
-    CustomDragOperation ret;
+    CustomDragOperation ret = CustomDragOperation_MOVE;
     if (_enableDrop) {
         ret = CustomDragOperation_ALLOW;
         NSLog(@"=========THUC=====: left operation");
