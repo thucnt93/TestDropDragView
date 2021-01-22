@@ -21,7 +21,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+    self.disableDragTracking = NO;
     self.wantsLayer = YES;
     self.layer.backgroundColor = [[NSColor brownColor] CGColor];
     [self registerForDraggedTypes:[NSArray arrayWithObjects:(id)kUTTypeData, NSPasteboardTypeFileURL, nil]];
@@ -93,15 +93,21 @@
 }
 
 - (void)draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint {
-    [_dragHandler handleDragBeginWithSource:self atPoint:screenPoint];
+    if (_dragHandler != nil && !self.disableDragTracking) {
+        [_dragHandler handleDragBeginWithSource:self atPoint:screenPoint];
+    }
 }
 
 - (void)draggingSession:(NSDraggingSession *)session movedToPoint:(NSPoint)screenPoint {
-    [_dragHandler handleDragMoveWithSource:self atPoint:screenPoint];
+    if (_dragHandler != nil && !self.disableDragTracking) {
+        [_dragHandler handleDragMoveWithSource:self atPoint:screenPoint];
+    }
 }
 
 - (void)draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
-    [_dragHandler handleDragEndWithSource:self atPoint:screenPoint];
+    if (_dragHandler != nil && !self.disableDragTracking) {
+        [_dragHandler handleDragEndWithSource:self atPoint:screenPoint];
+    }
 }
 
 

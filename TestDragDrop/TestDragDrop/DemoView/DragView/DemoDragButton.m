@@ -44,12 +44,16 @@
 }
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-    
+    NSLog(@"Button Drag begin with source at point");
     return CustomDragOperation_MOVE;
 }
 
 
+// If go to table view, we should
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
+    NSLog(@"Button Drag move with source at point");
+    
+    // Disable drag + drop
     return CustomDragOperation_MOVE;
 }
 

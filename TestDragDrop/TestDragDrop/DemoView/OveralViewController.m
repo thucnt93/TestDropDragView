@@ -113,10 +113,12 @@
 
 - (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager validateDrop:(id<NSDraggingInfo>)draggingInfo proposedItem:(id)item proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
-    CustomDragOperation ret = CustomDragOperation_MOVE;
+    self.dragButton.disableDragTracking = YES;
+    
+    CustomDragOperation ret = CustomDragOperation_ALLOW;
     if (_enableDrop) {
         ret = CustomDragOperation_ALLOW;
-        NSLog(@"=========THUC=====: left operation");
+        NSLog(@"=========THUC=====: ALLOW operation");
     } else {
         ret = CustomDragOperation_STOP;
         NSLog(@"=========THUC=====: stop operation");

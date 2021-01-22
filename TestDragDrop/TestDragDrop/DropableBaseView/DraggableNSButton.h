@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DraggableNSButton : NSButton<NSDraggingSource, NSDraggingDestination>
 
+@property (nonatomic) BOOL disableDragTracking;
 @property (strong, nonatomic) id<DragTrackingDelegate> dragTrackingDelegate;
 @end
 
