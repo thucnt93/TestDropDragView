@@ -12,10 +12,6 @@
 
 #import "DraggableNSView.h"
 
-#import "TestViewController.h"
-
-#import "OutsideViewContronller.h"
-
 @interface AppDelegate () {}
 @end
 

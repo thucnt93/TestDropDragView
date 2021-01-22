@@ -15,10 +15,7 @@
 		106B25A925946CB800C4281B /* DragHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B25A825946CB800C4281B /* DragHandler.m */; };
 		106E2A9825958A3C000CEE3B /* DropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9725958A3C000CEE3B /* DropHandler.m */; };
 		106E2A9B25958B15000CEE3B /* DroppableNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9A25958B15000CEE3B /* DroppableNSView.m */; };
-		106E2AA125958E8A000CEE3B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2A9F25958E8A000CEE3B /* TestViewController.m */; };
-		106E2AA225958E8A000CEE3B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AA025958E8A000CEE3B /* TestViewController.xib */; };
 		106E2AA625959F2B000CEE3B /* DragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AA525959F2B000CEE3B /* DragOperation.m */; };
-		1E17F22325AEB300002DAE88 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E17F22225AEB300002DAE88 /* CellView.xib */; };
 		1E1D7A6225AD8AC000586C3C /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5225AD8AC000586C3C /* DataProvider.m */; };
 		1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5B25AD8AC000586C3C /* CollectionViewManager.m */; };
 		1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D7A5E25AD8AC000586C3C /* OutlineViewManager.m */; };
@@ -31,12 +28,9 @@
 		1E6DADA125B7D94700920A04 /* DemoDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6DADA025B7D94700920A04 /* DemoDropView.m */; };
 		1E7CCE7025BA577C00E7E5C3 /* DemoDragButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7CCE6F25BA577C00E7E5C3 /* DemoDragButton.m */; };
 		1E7CCE7725BA7B3600E7E5C3 /* DropParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7CCE7625BA7B3600E7E5C3 /* DropParentView.m */; };
-		1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */; };
-		1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */; };
 		1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E7A25AD596B00252456 /* OveralViewController.m */; };
 		1EA93E8F25AD758C00252456 /* DraggableNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93E8E25AD758C00252456 /* DraggableNSButton.m */; };
 		1EA93EAB25AD7A7900252456 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA93EAA25AD7A7900252456 /* Helper.m */; };
-		1EA93ECC25AD850000252456 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA93ECA25AD850000252456 /* MainMenu.xib */; };
 		1EA93ED225AD857B00252456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA93ED125AD857B00252456 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -70,12 +64,8 @@
 		106E2A9725958A3C000CEE3B /* DropHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropHandler.m; sourceTree = "<group>"; };
 		106E2A9925958B15000CEE3B /* DroppableNSView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DroppableNSView.h; sourceTree = "<group>"; };
 		106E2A9A25958B15000CEE3B /* DroppableNSView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DroppableNSView.m; sourceTree = "<group>"; };
-		106E2A9E25958E8A000CEE3B /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		106E2A9F25958E8A000CEE3B /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		106E2AA025958E8A000CEE3B /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		106E2AA425959F2B000CEE3B /* DragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragOperation.h; sourceTree = "<group>"; };
 		106E2AA525959F2B000CEE3B /* DragOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragOperation.m; sourceTree = "<group>"; };
-		1E17F22225AEB300002DAE88 /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		1E1D7A5225AD8AC000586C3C /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		1E1D7A5325AD8AC000586C3C /* DataProviderProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProviderProtocols.h; sourceTree = "<group>"; };
 		1E1D7A5425AD8AC000586C3C /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
@@ -101,16 +91,12 @@
 		1E7CCE6F25BA577C00E7E5C3 /* DemoDragButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDragButton.m; sourceTree = "<group>"; };
 		1E7CCE7525BA7B3600E7E5C3 /* DropParentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropParentView.h; sourceTree = "<group>"; };
 		1E7CCE7625BA7B3600E7E5C3 /* DropParentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropParentView.m; sourceTree = "<group>"; };
-		1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutsideViewContronller.h; sourceTree = "<group>"; };
-		1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutsideViewContronller.m; sourceTree = "<group>"; };
-		1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutsideViewContronller.xib; sourceTree = "<group>"; };
 		1EA93E7925AD596B00252456 /* OveralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OveralViewController.h; sourceTree = "<group>"; };
 		1EA93E7A25AD596B00252456 /* OveralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OveralViewController.m; sourceTree = "<group>"; };
 		1EA93E8D25AD758C00252456 /* DraggableNSButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DraggableNSButton.h; sourceTree = "<group>"; };
 		1EA93E8E25AD758C00252456 /* DraggableNSButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DraggableNSButton.m; sourceTree = "<group>"; };
 		1EA93EA925AD7A7900252456 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		1EA93EAA25AD7A7900252456 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
-		1EA93ECB25AD850000252456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1EA93ED125AD857B00252456 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,16 +140,11 @@
 		106B2584259469E100C4281B /* TestDragDrop */ = {
 			isa = PBXGroup;
 			children = (
-				1E1D7A5025AD8AC000586C3C /* DatasourcesManager */,
+				1E7CCE7A25BAB99B00E7E5C3 /* CoreLogic */,
 				1EA93E9C25AD76D900252456 /* DragableBaseView */,
 				1E92522F25AC66B000DDBDC8 /* DropableBaseView */,
-				1E92522B25AC62D000DDBDC8 /* DropHandler */,
-				1E92522A25AC62C200DDBDC8 /* DragHandler */,
 				1EA93EA125AD775500252456 /* DemoView */,
-				1EA93EA625AD7A3100252456 /* Helper */,
 				1E17F22625AEB4AC002DAE88 /* OtherStub */,
-				1EA93ED125AD857B00252456 /* Main.storyboard */,
-				1E92522C25AC631F00DDBDC8 /* TestView */,
 			);
 			path = TestDragDrop;
 			sourceTree = "<group>";
@@ -288,11 +269,34 @@
 			path = DropView;
 			sourceTree = "<group>";
 		};
+		1E7CCE7A25BAB99B00E7E5C3 /* CoreLogic */ = {
+			isa = PBXGroup;
+			children = (
+				1E7CCE8725BABE0500E7E5C3 /* ViewModel */,
+				1EA93EA625AD7A3100252456 /* Helper */,
+				1E92522B25AC62D000DDBDC8 /* DropHandler */,
+				1E92522A25AC62C200DDBDC8 /* DragHandler */,
+				1E1D7A5025AD8AC000586C3C /* DatasourcesManager */,
+			);
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		1E7CCE8725BABE0500E7E5C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E1D7A6825ADA49300586C3C /* MockViewModel.h */,
+				1E1D7A6925ADA49300586C3C /* MockViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1E92522A25AC62C200DDBDC8 /* DragHandler */ = {
 			isa = PBXGroup;
 			children = (
 				106B25A725946CB800C4281B /* DragHandler.h */,
 				106B25A825946CB800C4281B /* DragHandler.m */,
+				106E2AA425959F2B000CEE3B /* DragOperation.h */,
+				106E2AA525959F2B000CEE3B /* DragOperation.m */,
 			);
 			path = DragHandler;
 			sourceTree = "<group>";
@@ -304,20 +308,6 @@
 				106E2A9725958A3C000CEE3B /* DropHandler.m */,
 			);
 			path = DropHandler;
-			sourceTree = "<group>";
-		};
-		1E92522C25AC631F00DDBDC8 /* TestView */ = {
-			isa = PBXGroup;
-			children = (
-				1EA93ECA25AD850000252456 /* MainMenu.xib */,
-				106E2A9E25958E8A000CEE3B /* TestViewController.h */,
-				106E2A9F25958E8A000CEE3B /* TestViewController.m */,
-				106E2AA025958E8A000CEE3B /* TestViewController.xib */,
-				1E9EAC2B259ADA7400523317 /* OutsideViewContronller.h */,
-				1E9EAC2C259ADA7400523317 /* OutsideViewContronller.m */,
-				1E9EAC2D259ADA7400523317 /* OutsideViewContronller.xib */,
-			);
-			path = TestView;
 			sourceTree = "<group>";
 		};
 		1E92522F25AC66B000DDBDC8 /* DropableBaseView */ = {
@@ -347,9 +337,7 @@
 				1E6DADA825B7E4DC00920A04 /* DragView */,
 				1EA93E7925AD596B00252456 /* OveralViewController.h */,
 				1EA93E7A25AD596B00252456 /* OveralViewController.m */,
-				1E1D7A6825ADA49300586C3C /* MockViewModel.h */,
-				1E1D7A6925ADA49300586C3C /* MockViewModel.m */,
-				1E17F22225AEB300002DAE88 /* CellView.xib */,
+				1EA93ED125AD857B00252456 /* Main.storyboard */,
 			);
 			path = DemoView;
 			sourceTree = "<group>";
@@ -357,8 +345,6 @@
 		1EA93EA625AD7A3100252456 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				106E2AA425959F2B000CEE3B /* DragOperation.h */,
-				106E2AA525959F2B000CEE3B /* DragOperation.m */,
 				1EA93EA925AD7A7900252456 /* Helper.h */,
 				1EA93EAA25AD7A7900252456 /* Helper.m */,
 				1E2292A925B821F2005560E9 /* NSView+init.h */,
@@ -450,10 +436,6 @@
 				1EA93ED225AD857B00252456 /* Main.storyboard in Resources */,
 				1E2292A025B80B34005560E9 /* DemoDropView.xib in Resources */,
 				106B2589259469E300C4281B /* Assets.xcassets in Resources */,
-				1E9EAC2F259ADA7400523317 /* OutsideViewContronller.xib in Resources */,
-				106E2AA225958E8A000CEE3B /* TestViewController.xib in Resources */,
-				1E17F22325AEB300002DAE88 /* CellView.xib in Resources */,
-				1EA93ECC25AD850000252456 /* MainMenu.xib in Resources */,
 				1E2292A425B82186005560E9 /* DemoDragView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,13 +456,11 @@
 			files = (
 				1EA93E7C25AD596B00252456 /* OveralViewController.m in Sources */,
 				106B25A925946CB800C4281B /* DragHandler.m in Sources */,
-				1E9EAC2E259ADA7400523317 /* OutsideViewContronller.m in Sources */,
 				106E2AA625959F2B000CEE3B /* DragOperation.m in Sources */,
 				1E1D7A6A25ADA49300586C3C /* MockViewModel.m in Sources */,
 				1E2292AB25B821F2005560E9 /* NSView+init.m in Sources */,
 				106B25A625946A2900C4281B /* DraggableNSView.m in Sources */,
 				1E1D7A6425AD8AC000586C3C /* OutlineViewManager.m in Sources */,
-				106E2AA125958E8A000CEE3B /* TestViewController.m in Sources */,
 				106E2A9B25958B15000CEE3B /* DroppableNSView.m in Sources */,
 				1E6DAD9025B7D88400920A04 /* DemoDragView.m in Sources */,
 				1E1D7A6325AD8AC000586C3C /* CollectionViewManager.m in Sources */,
@@ -514,17 +494,6 @@
 			targetProxy = 106B2596259469E400C4281B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1EA93ECA25AD850000252456 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1EA93ECB25AD850000252456 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		106B259C259469E400C4281B /* Debug */ = {
