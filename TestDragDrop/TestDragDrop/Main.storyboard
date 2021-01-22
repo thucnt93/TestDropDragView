@@ -39,6 +39,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="599" height="375"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="KWl-a2-INh" customClass="DropParentView">
+                                <rect key="frame" x="0.0" y="0.0" width="599" height="375"/>
+                            </customView>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-yF-sIm">
                                 <rect key="frame" x="20" y="20" width="261" height="265"/>
                                 <clipView key="contentView" id="Gg0-DF-UDu">
@@ -124,12 +127,16 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="top" id="4Gh-2T-O09"/>
+                            <constraint firstAttribute="bottom" secondItem="KWl-a2-INh" secondAttribute="bottom" id="8rk-BS-W8w"/>
+                            <constraint firstItem="KWl-a2-INh" firstAttribute="top" secondItem="YGW-f3-udY" secondAttribute="top" id="A44-AH-OWB"/>
                             <constraint firstAttribute="trailing" secondItem="Ycd-Dg-rvx" secondAttribute="trailing" constant="20" id="H3X-Ij-mDg"/>
                             <constraint firstItem="34B-gM-yeK" firstAttribute="top" secondItem="YGW-f3-udY" secondAttribute="top" constant="34" id="Ih9-hx-7Hk"/>
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="top" secondItem="YGW-f3-udY" secondAttribute="top" constant="20" id="J7F-nP-fed"/>
                             <constraint firstItem="aXk-A0-Q8v" firstAttribute="height" secondItem="BLs-AF-kBc" secondAttribute="height" id="JGV-mM-rc9"/>
                             <constraint firstItem="34B-gM-yeK" firstAttribute="centerX" secondItem="YGW-f3-udY" secondAttribute="centerX" id="LOh-nb-1ir"/>
                             <constraint firstItem="BLs-AF-kBc" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="Lof-MR-Pby"/>
+                            <constraint firstItem="KWl-a2-INh" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" id="LuR-Rt-1Y2"/>
+                            <constraint firstAttribute="trailing" secondItem="KWl-a2-INh" secondAttribute="trailing" id="S2z-yq-RvT"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="top" secondItem="BLs-AF-kBc" secondAttribute="bottom" constant="20" id="S9N-Kl-6g4"/>
                             <constraint firstAttribute="bottom" secondItem="Ycd-Dg-rvx" secondAttribute="bottom" constant="20" id="SjW-Ub-dlV"/>
                             <constraint firstItem="aRC-yF-sIm" firstAttribute="leading" secondItem="YGW-f3-udY" secondAttribute="leading" constant="20" id="UHY-zy-gWA"/>
@@ -146,6 +153,7 @@
                         <outlet property="dragButton" destination="BLs-AF-kBc" id="R4C-Ki-NyE"/>
                         <outlet property="dropableView" destination="Ycd-Dg-rvx" id="aya-C0-YHn"/>
                         <outlet property="nsDraggableView" destination="aXk-A0-Q8v" id="LEu-54-19r"/>
+                        <outlet property="parentView" destination="KWl-a2-INh" id="7SD-j8-0TN"/>
                         <outlet property="switchEnableDrop" destination="34B-gM-yeK" id="jSA-eN-NdB"/>
                         <outlet property="tableView" destination="bGM-au-xkZ" id="1v5-LD-8ES"/>
                     </connections>

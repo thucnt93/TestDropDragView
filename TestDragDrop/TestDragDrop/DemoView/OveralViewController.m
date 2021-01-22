@@ -29,8 +29,10 @@
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSView *dropableView;
 @property (weak) IBOutlet NSView *nsDraggableView;
-@property (weak) IBOutlet NSTextField *titleDragView;
 @property (weak) IBOutlet NSSwitch *switchEnableDrop;
+
+@property (weak) IBOutlet DroppableNSView *parentView;
+
 
 @end
 

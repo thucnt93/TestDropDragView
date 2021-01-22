@@ -88,6 +88,7 @@
 
 - (void)mouseDragged:(NSEvent *)event
 {
+    self.disableDragTracking = NO;
     [self setDraggingSessionWithEvent:event];
     [super mouseDragged:event];
 }
